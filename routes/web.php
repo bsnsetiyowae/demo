@@ -16,7 +16,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    dd("dsds");
+    return redirect('/docs');
 });
 
 Route::get('/dashboard', function () {
@@ -30,9 +31,7 @@ Route::prefix(LaravelLocalization::setLocale())
     ->group(function () {
 
         Route::get('/', function () {
-            $index = (new Page(app()->getLocale(), 'docs'))->getSidebar();
-
-            return view('welcome', compact('index'));
+            return redirect('/docs');
         });
 
         Route::get('/{type}/{page?}', function (string $type, ?string $page = 'index') {
