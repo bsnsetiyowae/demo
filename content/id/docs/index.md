@@ -9,7 +9,7 @@ Dokumen ini bertujuan untuk menyediakan spesifikasi teknis komprehensif untuk me
 
 ## Alur Kerja
 
-![Alur Kerja {brand}](/storage/workflow.jpg)
+![Alur Kerja {brand}](/assets/workflow.jpg)
 
 
 ## Istilah & Definisi
@@ -28,4 +28,4 @@ Jika Anda merasa kurang jelas, silakan hubungi tim dukungan kami.
 
 ## Diagram Alur V3
 
-![Diagram Alur {brand} V3](/storage/flowchart_v3.png)
+![Diagram Alur {brand} V3](/assets/flowchart_v3.png)
