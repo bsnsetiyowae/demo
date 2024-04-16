@@ -14,12 +14,10 @@
     <link href="https://fonts.bunny.net/css?family=jetbrains-mono:400,600" rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"></script>
+    <script src="{{ asset('build/js/app.js') }}" defer></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typesense-docsearch-css@0.3.0" />
     <script>

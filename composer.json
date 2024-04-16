@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.0",
         "league/commonmark": "^2.4",
         "mcamara/laravel-localization": "^2.0",
+        "symfony/yaml": "^5.4",
         "torchlight/torchlight-commonmark": "^0.5.5"
     },
     "require-dev": {
