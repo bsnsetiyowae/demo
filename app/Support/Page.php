@@ -43,7 +43,6 @@ class Page
         // check path
         abort_if(!$this->disk->exists($path), 404);
 
-
         if (App::environment('production')) {
             $cachedData = Cache::rememberForever('view.' . md5($path), function () use ($path) {
                 $markdown = Markdown::convert($this->disk->get($path));

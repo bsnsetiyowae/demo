@@ -4,6 +4,7 @@ namespace App\Markdown;
 
 use Illuminate\Support\Str;
 use League\CommonMark\Event\DocumentParsedEvent;
+use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
 use League\CommonMark\Node\Block\AbstractBlock;
 use League\CommonMark\Util\HtmlElement;
 use League\CommonMark\Util\Xml;
@@ -37,11 +38,11 @@ abstract class BaseExtension
                 continue;
             }
             /**
-             *  @var \League\CommonMark\Extension\CommonMark\Node\Block\FencedCode $node   
+             *  @var FencedCode $node   
              *
              */
 
-            preg_match('/title="([^"]+)"/', $node->getInfo(), $matches);
+            preg_match('/title="([^"]+)"/', $node->getInfo() ?? "", $matches);
 
 
             if (isset($matches[1])) {
