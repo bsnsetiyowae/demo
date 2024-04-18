@@ -73,6 +73,7 @@ curl --request POST \
     Example `P001`. Please contact the administrator to get your payment code.
   </x-property>
   <x-property name="user_id" type="string" required>
+    User identifier.
   </x-property>
   <x-property name="currency_code" type="string" required>
     Please refer to [currency list](/docs/currency).
@@ -90,16 +91,16 @@ curl --request POST \
 
 ```json title="Parameters Object"
 {
-  "merchant_code": "kode_merchant_dari_provider",
-  "merchant_api_key": "api_key_merchant_dari_provider",
-  "transaction_code": "kode_unik_untuk_transaksi_ini",
-  "transaction_timestamp": 1649767200, 
-  "transaction_amount": 99.99,
-  "payment_code": "P001",
-  "user_id": "id_pengguna",
-  "currency_code": "USD",
-  "bank_code": "001", 
-  "deposit_name": "nama_deposit" 
+  "merchant_code": "",
+  "merchant_api_key": "",
+  "transaction_code": "",
+  "transaction_timestamp": 0, 
+  "transaction_amount": 0,
+  "payment_code": "",
+  "user_id": "",
+  "currency_code": "",
+  "bank_code": "", 
+  "deposit_name": "" 
 }
 ```
 
@@ -120,6 +121,7 @@ Returns a transaction status object. This call returns an [error](/api/errors) i
 </x-col>
 <x-col sticky>
 
+<x-code-group>
 
 ```json title="Response INR"
 {
@@ -183,6 +185,7 @@ Returns a transaction status object. This call returns an [error](/api/errors) i
   "expired_timezone": "GMT+05:30"
 }
 ```
+</x-code-group>
 
 </x-col>
 </x-row>

@@ -52,6 +52,7 @@ return [
         League\CommonMark\Extension\GithubFlavoredMarkdownExtension::class,
         App\Markdown\TorchlightExtension::class,
         App\Markdown\BladeRendererExtension::class,
+        App\Markdown\CodeGroupExtension::class,
         App\Markdown\BadgeExtension::class,
     ],
 

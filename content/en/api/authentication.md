@@ -12,13 +12,14 @@ The encrypted parameters are decrypted and validated by our system using the sam
 
 ## Security
 
-We have our own algorithm for making requests to hit our endpoint. This algorithm referred to the [security pre-requirements](/docs/pre-requirements) which requires to generate key for each transaction.
+We have our own algorithm for making requests to hit our endpoint. This algorithm referred to the [security pre-requirements](/docs/pre-requirements#security) which requires to generate key for each transaction.
 
 ## Template Code
 we provide some code snippets to help in development.
 
-### PHP
-```php title="encrypt_decrypt.php"
+<x-code-group>
+
+```php
 public function encrypt_decrypt($action, $string, $apikey = '{your_api_key}', $secretkey = '{your_secret_key}') {
     $output = false;
     $encrypt_method = "AES-256-CBC";
@@ -39,8 +40,7 @@ public function encrypt_decrypt($action, $string, $apikey = '{your_api_key}', $s
 }
 ```
 
-### C#
-```csharp title="encrypt_decrypt.cs"
+```c#
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -129,8 +129,7 @@ public class EncryptDecrypt
 
 ```
 
-### Java
-```java title="EncryptDecrypt.java"
+```java
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.Arrays;
@@ -207,8 +206,7 @@ public class Playground {
 }
 ```
 
-### Javascript
-```javascript title="encrypt_decrypt.js"
+```javascript
 var crypto = require("crypto");
 
 const apikey = "myapikey";
@@ -256,3 +254,4 @@ encrypt_decrypt(
   "QqqF5QD9NdtM1O5JCpySZXyFT0gmXvEgWUEgoW19xajeviLAAlwzdDJmD7sgE2laIp7iEt%2F1SzUpquHykjfQP2eTTQGyR3Jw60iVniAayGxBOQRoPW9ln%2FT4DzQkZL1eqapgcum%2FyGKLErYJ0v1WedA2nYZ%2Fd64vZISGh3eA2PqDGJdLZWYKbAP7uGHzMGBslmx8CcBCFbjrKvfA5VGam6LHi1ZWTfv8eeHmlBv4CSI6pXzhb43UZ22uBQj%2FN8rc6oJQd7l14FK2A4sZhpUhZQ%3D%3D"
 );
 ```
+</x-code-group>

@@ -14,7 +14,7 @@
         @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
             <a rel="alternate" hreflang="{{ $localeCode }}"
                 href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
-                class="block w-full px-4 py-2 text-start text-sm leading-5 text-stone-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none">
+                class="block w-full px-4 py-2 text-start text-sm leading-5 text-stone-700 transition duration-150 ease-in-out hover:bg-stone-100 focus:bg-stone-100 focus:outline-none">
                 {{ $properties['name'] }}
             </a>
         @endforeach

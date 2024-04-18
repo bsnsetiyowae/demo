@@ -78,7 +78,7 @@ curl --request POST \
     Silakan lihat [daftar mata uang](/docs/currency).
   </x-property>
   <x-property name="bank_code" type="double" required>
-    Diperlukan hanya pada  [BDT](/docs/bank/bdt), [VND](/docs/bank/vnd), [THB](/docs/bank/thb), [IDR](/docs/bank/idr), [MYR](/docs/bank/myr), dan [PHP](/docs/bank/php) metode pembayaran online bank PaymentMethodChangeEvent.
+    Diperlukan hanya pada  [BDT](/docs/bank/bdt), [VND](/docs/bank/vnd), [THB](/docs/bank/thb), [IDR](/docs/bank/idr), [MYR](/docs/bank/myr), dan [PHP](/docs/bank/php) metode pembayaran online bank.
   </x-property>
   <x-property name="deposit_name" type="string" required>
     Nama deposit (wajib untuk KRW).

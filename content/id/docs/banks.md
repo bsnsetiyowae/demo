@@ -12,6 +12,10 @@ Brazilian Real
 
 Chinese Yuan
 
+### [INR Bank Code](/docs/bank/inr)
+
+Indian Rupee
+
 ### [IDR Bank Code](/docs/bank/idr)
 
 Indonesian Rupiah

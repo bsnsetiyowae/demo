@@ -44,6 +44,46 @@
 
 
 @layer utilities {
+    .scrollbar-hide {
+
+        /* IE and Edge */
+        -ms-overflow-style: 'none';
+  
+  
+        /* Firefox */
+        scrollbar-width: 'none';
+  
+  
+        /* Safari and Chrome */
+        &::-webkit-scrollbar {
+  
+          display: 'none';
+  
+        }
+  
+      }
+  
+      
+  
+    .scrollbar-default {
+
+        /* IE and Edge */
+        -ms-overflow-style: 'auto';
+
+
+        /* Firefox */
+        scrollbar-width: 'auto';
+
+
+        /* Safari and Chrome */
+        &::-webkit-scrollbar {
+
+            display: 'block';
+
+        }
+
+    }
+  
     .steps:first-child h3:first-child {
         @apply mt-0;
     }
@@ -88,7 +128,7 @@
             @apply mt-4;
 
             li {
-                @apply relative mb-2 flex gap-x-2 items-center px-4 py-2 bg-stone-800 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-gray-700 transition ease-in-out duration-150;
+                @apply relative mb-2 flex gap-x-2 items-center px-4 py-2 bg-stone-800 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-stone-700 transition ease-in-out duration-150;
 
                 a {
                     @apply w-full text-white;
@@ -126,7 +166,7 @@
 
         ul {
             overflow: hidden;
-            /* max-height: 0; */
+            max-height: none;
             transition: max-height 0.45s ease;
 
             li {
@@ -154,26 +194,18 @@
             }
         }
 
-        .sub--on {
-            & > h2 {
-                margin-bottom: 1em;
-            }
-
+        .sub--open {
             ul {
                 max-height: none;
             }
         }
+        
+        .sub--close {
+            ul {
+                max-height: 0;
+            }
+        }
     }
-}
-
-figcaption[title] {
-    @apply rounded-t-lg text-stone-50 opacity-95 py-2 px-3;
-    background-color: var(--tw-prose-pre-bg);
-}
-
-figcaption+pre {
-    border-top-left-radius: 0!important;
-    border-top-right-radius: 0!important
 }
 
 .prose :where(ol):not(:where([class~="not-prose"] *)) {
@@ -323,30 +355,6 @@ figcaption+pre {
 
 .prose :where(code):not(:where([class~="not-prose"] *)):after {
     content: "";
-}
-
-.prose :where(pre):not(:where([class~="not-prose"] *)) {
-    padding: 0.8571429em 0;
-}
-
-.prose :where(pre code):not(:where([class~="not-prose"] *)) {
-    background-color: transparent;
-    border-width: 0;
-    border-radius: 0;
-    padding: 0;
-    font-weight: inherit;
-    color: inherit;
-    font-size: inherit;
-    font-family: inherit;
-    line-height: inherit;
-}
-
-.prose :where(pre code):not(:where([class~="not-prose"] *)):before {
-    content: none;
-}
-
-.prose :where(pre code):not(:where([class~="not-prose"] *)):after {
-    content: none;
 }
 
 .prose :where(table):not(:where([class~="not-prose"] *)) {
@@ -663,23 +671,6 @@ figcaption+pre {
     counter-increment: item;
 }
 
-
-.prose :where(ul li):not(:where([class~="not-prose"] *)):before {
-    position: absolute;
-    background-color: #141414;
-    color: #fff;
-    top: 0;
-    left: 12px;
-    margin-top: 0.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 9999px;
-    content: '';
-}
-
 .prose
     :where(ol li, ol ol, ol ul, ul li, ul ol, ul ul):not(
         :where([class~="not-prose"] *)
@@ -774,7 +765,7 @@ figcaption+pre {
     border-color: #0d0d0d;
 }
 
-.prose :where(table tr:hover):not(:where([class~="not-prose"] *)) {
+.prose :where(table tr:hover:not(:has(th))):not(:where([class~="not-prose"] *)) {
     background-color: #faf594;
 }
 

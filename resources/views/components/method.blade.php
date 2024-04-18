@@ -24,4 +24,4 @@
     }
 @endphp
 
-<span {{ $attributes->merge(['class' => $classes]) }}>{{ $method }}</span>
+<div {{ $attributes->merge(['class' => $classes]) }}>{{ $method }}</div>

@@ -3,6 +3,8 @@ title: Daftar Kode Bank VND
 description: Resources {brand} Payment Integration. 
 ---
 
+<x-button href="/docs/banks">Back To Bank List</x-button>
+
 | Bank Code     | Bank Name                                                           |
 | ------------- | ------------------------------------------------------------------- |
 | Deposit       |
@@ -69,6 +71,8 @@ description: Resources {brand} Payment Integration.
 | `970462`      | NGAN HANG KOOKMIN - CN HA NOI                                       |
 
 ## Maintenance
+
+<x-button href="/docs/banks">Back To Bank List</x-button>
 
 | Bank Code     | Bank Name   |
 | ------------- | ----------- |

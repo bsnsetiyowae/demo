@@ -10,9 +10,9 @@ First, make sure you fulfill the initial requirements for a smooth process.
 
 ## Send your first API request
 
-To make a request to the {brand} API, the operator must create a URL containing tokens and parameters using our own algorithm. You can refer to the **API Functions** section for the URL and parameters, and the [Authentication & Security]('/api/authentication') for the algorithm.
+To make a request to the {brand} API, the operator must create a URL containing tokens and parameters using our own algorithm. You can refer to the **API Functions** section for the URL and parameters, and the [Authentication & Security](/api/authentication) for the algorithm.
 
-For example, if we want to make a payment request, we use [Payment Endpoint]('/api/payment') to send the request. Then, we look at what parameters are required.
+For example, if we want to make a payment request, we use [Payment Endpoint](/api/payment) to send the request. Then, we look at what parameters are required.
 
 <x-steps>
 
@@ -33,12 +33,12 @@ $str = "merchant_code=xxx&'
 
 ### Encrypt using encrypt_decrypt
 
-Refer to security on pre-requirements, the attribute to send is usually just using **one key** with encrypted parameters. for more info please read more [Authentication & Security]('/api/authentication')
+Refer to security on pre-requirements, the attribute to send is usually just using **one key** with encrypted parameters. for more info please read more [Authentication & Security](/api/authentication)
 
 Encryption sample:
 
 ```php
-$key = encrypt_decrypt('encrypt', $str, '{your_api_key}', '{your_secret_key}')
+$key = encrypt_decrypt('encrypt', $str, '{your_api_key}', '{your_secret_key})
 ```
 
 ### Done

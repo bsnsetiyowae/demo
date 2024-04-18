@@ -3,6 +3,8 @@ title: Daftar Kode Bank THB
 description: Resources {brand} Payment Integration. 
 ---
 
+<x-button href="/docs/banks">Back To Bank List</x-button>
+
 | Bank Code          | Shorthand | Bank Name                       |
 | ------------------ | --------- | ------------------------------- |
 | DEPOSIT BANK CODE  |
@@ -21,6 +23,8 @@ description: Resources {brand} Payment Integration.
 | `8`                | `CIMBT`   | CIMB Thai                       |
 
 ## Maintenance
+
+<x-button href="/docs/banks">Back To Bank List</x-button>
 
 | Bank Code                                                          | Shorthand     | Bank Name                                                          |
 | ------------------------------------------------------------------ | ------------- | ------------------------------------------------------------------ |

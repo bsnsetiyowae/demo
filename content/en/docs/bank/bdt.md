@@ -3,6 +3,8 @@ title: BDT Bank Code List
 description: Resources {brand} Payment Integration. 
 ---
 
+<x-button href="/docs/banks">Back To Bank List</x-button>
+
 | Bank Code              | Bank Name                          |
 | ---------------------- | ---------------------------------- |
 | **Deposit Bank Code**  |

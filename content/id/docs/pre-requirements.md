@@ -17,5 +17,5 @@ description: Sebelum mengintegrasikan Payment Gateway {brand} ke dalam sistem An
 
 ## Keamanan
 
-1. Token dan kunci transaksi (Perlu membuat token dan kunci untuk setiap transaksi). Lebih lanjut tentang fungsi enkripsi / dekripsi pembuatan token.
+1. Token dan kunci transaksi (Perlu membuat token dan kunci untuk setiap transaksi). Lebih lanjut tentang [fungsi enkripsi dekripsi](/api/authentication) pembuatan token.
 2. Daftar Putih IP untuk login Back Office.

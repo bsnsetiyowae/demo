@@ -3,8 +3,12 @@ title: Daftar Kode Bank KRW
 description: Resources {brand} Payment Integration. 
 ---
 
-| Bank Code                | 은행 이름              | Bank Name                                  |
-| ------------------------ | ---------------------- | ------------------------------------------ |
+<x-button href="/docs/banks">Back To Bank List</x-button>
+
+| Bank Code | 은행 이름 | Bank Name |
+| --------- | --------- | --------- |
+<x-button href="/docs/banks">Back To Bank List</x-button>
+
 | Bank Code for Withdrawal |
 | `kebhana_kr`             | KEB하나은행            | KEB Hana Bank                              |
 | `scb_kr`                 | SC제일은행             | Standard Chartered Bank                    |

@@ -9,7 +9,7 @@
             @endisset
 
             @isset($frontmatter['method'])
-                <div class="mb-4 flex items-center bg-gray-600 gap-x-3">
+                <div class="mb-4 flex items-center bg-stone-600 gap-x-3">
                     <x-method method="{{ $frontmatter['method'] }}" />
                     <span class="font-mono text-xs text-zinc-400">{{ $frontmatter['label'] }}</span>
                 </div>

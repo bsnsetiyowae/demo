@@ -38,6 +38,7 @@ curl --request POST \
 
 ---
 
+
 <x-row>
 <x-col class="md:max-w-lg">
 
@@ -68,21 +69,23 @@ curl --request POST \
     The amount of of the transaction.
   </x-property>
   <x-property name="user_id" type="string" required>
-    user ID.
+    User identifier.
   </x-property>
   <x-property name="currency_code" type="string" required>
   Please refer to [currency list](/docs/currency).
   </x-property>
   <x-property name="address" type="string" required>
-  <Warning>required for crypto payout</Warning>
+  **Required for** crypto payout
   This is the user's crypto wallet address.
   </x-property>
-  <x-property name="back_account_number" type="string" required>
-  <Warning>required for (INR, CNY, VND, THB, KRW, BDT, JPY,BRL Payout)</Warning>
-  <Warning>for BRL used ID Card with 11 digits</Warning>
+  <x-property name="bank_account_number" type="string" required>
+  **Required for** (INR, CNY, VND, THB, KRW, BDT, JPY,BRL Payout) for BRL used ID Card with 11 digits
+  </x-property>
+  <x-property name="ifsc_code" type="string" required>
+  **Required only** For **INR** Payout
   </x-property>
   <x-property name="bank_code" type="string" required>
-  <Warning>required for ( INR, CNY, VND, THB, BDT, IDR, MYR, KRW, JPY,BRL and PHP Payout)</Warning>
+  **Required for** ( INR, CNY, VND, THB, BDT, IDR, MYR, KRW, JPY,BRL and PHP Payout)
 
   The available **INR bank code** is displayed on the bank code section in {brand} Backoffice in Withdraw Menu.
 
@@ -93,7 +96,7 @@ curl --request POST \
   the avaliable [BRL bank code](/docs/bank/brl).
   </x-property>
   <x-property name="bank_name" type="string" required>
-  <Warning>required for ( INR, CNY, VND, THB, BDT, IDR, MYR, KRW, JPY,BRL and PHP Payout)</Warning>
+  **Required for** ( INR, CNY, VND, THB, BDT, IDR, MYR, KRW, JPY,BRL and PHP Payout)
 
   The available **INR bank code** is displayed on the bank code section in {brand} Backoffice in Withdraw Menu.
 
@@ -104,13 +107,13 @@ curl --request POST \
   the avaliable **BRL** used the account value.
   </x-property>
   <x-property name="branch_code" type="string">
-  <Warning>Required only for **JPY**. Branch Code.</Warning>
+  **Required only** for **JPY**. Branch Code.
   </x-property>
   <x-property name="account_name" type="string" required>
   Bank Account / Wallet name.
   </x-property>
   <x-property name="callback_url" type="string">
-  url callback beside url set from Backoffice.
+  Url callback beside url set from Backoffice.
   </x-property>
 </x-properties>
 
@@ -128,6 +131,7 @@ curl --request POST \
   "currency_code": "USD",
   "address": "0x123456789abcdef",
   "bank_account_number": "1234567890",
+  "ifsc_code": "12323",
   "bank_code": "XYZ",
   "bank_name": "Example Bank",
   "branch_code": null,
@@ -153,12 +157,22 @@ Returns a transaction status object. This call returns an [error](/api/errors) i
 </x-col>
 <x-col sticky>
 
-```json title="Response"
+<x-code-group>
+
+```json title="111"
 {
-    "message": "request withdraw successful",
-    "success": true
+    "success": true,
+    "message": "Invalid Transaction Code ( not unique )!, error code 111"
 }
 ```
+
+```json title="200"
+{
+    "success": true,
+    "message": "request withdraw successful"
+}
+```
+</x-code-group>
 
 </x-col>
 </x-row>

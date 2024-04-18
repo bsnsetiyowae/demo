@@ -45,16 +45,19 @@ class TorchlightExtension extends BaseExtension implements ExtensionInterface, N
             $copyButton = new HtmlElement('button', [
                 'type' => 'button',
                 'id' => 'copy-button',
-                'class' => 'absolute right-4 top-1.5 overflow-hidden rounded-lg bg-white/5 py-1 pl-2 pr-3 text-xs'
-            ], '<span aria-hidden="true" class="pointer-events-none text-stone-100">Copy</span>');
+                'class' => 'absolute right-4 top-3 overflow-hidden rounded-lg bg-stone-900/50 py-1 pl-2 pr-3 text-xs'
+            ], '<span aria-hidden="true" class="text-stone-100">Copy</span>');
 
             // Create the <pre> element wrapping the <code> element
-            $preElement = new HtmlElement('pre', [], new HtmlElement('code', [], $inner));
+            $preElement = new HtmlElement('pre', ["class" => "p-2.5"], $inner);
 
             // Create the <figcaption> element for the title
             $titleElement = null;
             if ($attributes['title'] ?? null) {
-                $titleElement = new HtmlElement('figcaption', $node->data->getData('attributes')->export(), $attributes['title']);
+                $titleElement = new HtmlElement('figcaption', [
+                    "class" => "bg-stone-900/95 rounded-t-lg text-stone-50 py-3.5 px-3",
+                    "title" => ""
+                ], $attributes['title']);
             }
             // Create the <figure> element with appropriate children
             $figureElementChildren = [$preElement, $copyButton];
@@ -62,9 +65,9 @@ class TorchlightExtension extends BaseExtension implements ExtensionInterface, N
             if ($titleElement !== null) {
                 array_unshift($figureElementChildren, $titleElement);
             }
-            return new HtmlElement('figure', [
-                "class" => "relative"
-            ], $figureElementChildren);
+
+
+            return new HtmlElement('figure', array_merge($node->data->getData('attributes')->export(), ["class" => "relative [&_figcaption+pre]:rounded-t-none"]), $figureElementChildren);
         });
 
         $this->bind($environment, 'addRenderer');

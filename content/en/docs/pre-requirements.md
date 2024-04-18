@@ -5,7 +5,7 @@ description: Before integrating {brand} Payment Gateway into your system, ensure
 
 ## Pre-Requirements Provide by Provider
 
-1. Server info & A PI URL.
+1. Server info & API URL.
 2. Credential API : `api_key`, `secret_key`, `merchant_code`.
 3. Credential BO : username, password.
 
@@ -17,6 +17,5 @@ description: Before integrating {brand} Payment Gateway into your system, ensure
 
 ## Security
 
-1. Token and transaction key (Need to create token and key for each transaction). More about generate token encrypt /
-   decript function.
+1. Token and transaction key (Need to create token and key for each transaction). More about [generate token encrypt / decrypt function](/api/authentication).
 2. IP White list for Back Office login.

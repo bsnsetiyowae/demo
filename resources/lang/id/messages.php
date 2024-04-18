@@ -49,4 +49,7 @@ return [
             ],
         ]
     ],
+
+    'read-more' => "Baca Lebih Lanjut",
+    'on-page' => "Pada Halaman Ini"
 ];

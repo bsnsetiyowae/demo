@@ -8,6 +8,7 @@ toc: false
 <x-row>
 <x-col class="md:max-w-lg">
 
+
 ## Make Payment Request
 
 This API is used to create payment requests. This API requires 1 `key` parameter, which contains a combination of parameters separated by the & character and then encrypted using the encrypt_decrypt algorithm.
@@ -73,13 +74,13 @@ curl --request GET \
     Please refer to [currency list](/docs/currency).
   </x-property>
   <x-property name="bank_code" type="double">
-    Required just on [VND](/docs/bank/vnd), [THB](/docs/bank/thb), [IDR](/docs/bank/idr), [MYR](/docs/bank/myr), and [PHP](/docs/bank/php) online bank payment PaymentMethodChangeEvent.
+    Required just on [VND](/docs/bank/vnd), [THB](/docs/bank/thb), [IDR](/docs/bank/idr), [MYR](/docs/bank/myr), and [PHP](/docs/bank/php) online bank payment.
   </x-property>
   <x-property name="callback_url" type="string">
-    url callback beside url set from Backoffice.
+    Url callback beside url set from Backoffice.
   </x-property>
   <x-property name="return_url" type="string">
-    dynamic return URL to redirect back to the merchant page after completing transactions.
+    Dynamic return URL to redirect back to the merchant page after completing transactions.
   </x-property>
   <x-property name="random_bank_code" type="string">
     Only for VND (Use value BankQR for E-Wallet and OBT for bank transfer).
@@ -117,6 +118,6 @@ These parameters must be [encrypted](/api/authentication) before being sent thro
 
 ### Return
 
-Returns a redirect to our payment page. This call returns an [error](/api/errors) if an error occurs.
+Returns a **redirect to our payment page**. This call returns an [error](/api/errors) if an error occurs.
 </x-col>
 </x-row>

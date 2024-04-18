@@ -1,7 +1,7 @@
 <aside class="sticky top-24 mb-5 hidden min-w-[280px] max-w-[280px] px-4 prose-p:leading-loose lg:block lg:px-6 xl:px-8">
     <div x-show="headings.length" x-cloak>
         <p class="mb-2 mt-5 whitespace-nowrap text-xs font-semibold uppercase tracking-widest text-stone-700">
-            On this page
+            {{ __('messages.on-page') }}
         </p>
 
         <div

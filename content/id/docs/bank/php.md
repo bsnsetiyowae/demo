@@ -3,6 +3,8 @@ title: Daftar Kode Bank PHP
 description: Resources {brand} Payment Integration. 
 ---
 
+<x-button href="/docs/banks">Back To Bank List</x-button>
+
 | Bank Code          | Bank Name                                    |
 | ------------------ | -------------------------------------------- |
 | Deposit Bank Code  |
@@ -72,6 +74,8 @@ description: Resources {brand} Payment Integration.
 | `IB`               | ING Bank N.V.                                |
 
 # Maintenance
+
+<x-button href="/docs/banks">Back To Bank List</x-button>
 
 | Bank Code  | Bank Name                           |
 | ---------- | ----------------------------------- |

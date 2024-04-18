@@ -2,14 +2,13 @@
 title: Callback Page
 ---
 
-It's possible to set up a successful callback page via Back Office. When the transaction gets a success status. the page
-will be redirected to the success URL page. When the translation gets failed status, the page will be redirected to the
-failed URL page.
+It's possible to set up a successful callback page via Back Office. When the transaction receives a success status, the page will be redirected to the success URL page. Similarly, when the transaction receives a failed status, the page will be redirected to the failed URL page.
 
-Sample callback success url format set on the Back Office like so:
+Sample callback success URL format set on the Back Office:
 
-```bash title="Example callback URL"
+```bash
+Example callback URL:
 https://www.example.com/success
 ```
 
-if the transaction succeeds, will be redirected to: `https://www.example.com/success`.
+If the transaction succeeds, the user will be redirected to: `https://www.example.com/success`.

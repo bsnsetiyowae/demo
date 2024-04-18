@@ -90,7 +90,7 @@
 
                             <div class="flex w-full justify-end">
                                 <div class="ml-10 flex w-full items-center justify-end">
-                                    <button
+                                    {{-- <button
                                         class="hover:bg-transparency-box-5 flex cursor-pointer select-none items-center space-x-0 overflow-hidden rounded-lg bg-transparent px-3 py-1 transition-colors lg:hidden lg:space-x-2"
                                         id="docsearch">
                                         <div>
@@ -99,7 +99,7 @@
                                         <span class="leading-xl text-base">
                                             <div id="searchbar-nav"></div>
                                         </span>
-                                    </button>
+                                    </button> --}}
 
                                     <x-language-switcher />
 

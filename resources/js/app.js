@@ -19,7 +19,7 @@ function setupNavCurrentLinkHandling() {
         );
 
         if (current) {
-            current.parentNode.parentNode.parentNode.classList.add("sub--on");
+            current.parentNode.parentNode.parentNode.classList.add("sub--open");
             current.parentNode.classList.add("active");
         }
     });
@@ -28,15 +28,16 @@ function setupNavCurrentLinkHandling() {
         el.addEventListener("click", (e) => {
             e.preventDefault();
 
-            const active = el.parentNode.classList.contains("sub--on");
+            const parent = el.parentNode;
 
-            [...document.querySelectorAll(".docs_sidebar ul li")].forEach(
-                (el) => el.classList.remove("sub--on"),
-            );
-
-            if (!active) {
-                el.parentNode.classList.add("sub--on");
+            if (parent.classList.contains("sub--open") || parent.classList.value === '') {
+                parent.classList.remove("sub--open");
+                parent.classList.add("sub--close");
+            } else {
+                parent.classList.remove("sub--close");
+                parent.classList.add("sub--open");
             }
+
         });
     });
 
@@ -70,6 +71,14 @@ document.querySelectorAll("#copy-button").forEach(button => {
         await copyCode(button.closest("figure").querySelector("pre code"), button.querySelector('span'))
     });
 });
+
+document.querySelectorAll("#copy-base").forEach(button => {
+    button.addEventListener("click", async function () {
+        await copyCode(button.querySelector("code"), button.querySelector('span'))
+
+    });
+});
+
 
 async function copyCode(code, button) {
     let text = code.innerText;

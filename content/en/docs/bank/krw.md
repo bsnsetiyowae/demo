@@ -5,7 +5,7 @@ description: Resources {brand} Payment Integration.
 
 | Bank Code                | 은행 이름              | Bank Name                                  |
 | ------------------------ | ---------------------- | ------------------------------------------ |
-| Bank Code for Withdrawal |
+| **Withdrawal Bank Code** |
 | `kebhana_kr`             | KEB하나은행            | KEB Hana Bank                              |
 | `scb_kr`                 | SC제일은행             | Standard Chartered Bank                    |
 | `kyongnam_kr`            | 경남은행               | Kyongnam Bank                              |
