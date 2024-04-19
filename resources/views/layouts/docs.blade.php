@@ -14,10 +14,10 @@
     <link href="https://fonts.bunny.net/css?family=jetbrains-mono:400,600" rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('build/css/app.css') }}">
 
     <!-- Scripts -->
-    <script src="{{ asset('build/js/app.js') }}" defer></script>
+    <script src="{{ mix('build/js/app.js') }}" defer></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typesense-docsearch-css@0.3.0" />
     <script>
