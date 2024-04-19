@@ -25,7 +25,6 @@
 @endtask
 
 @task('optimize')
-    npm run prod
     php artisan optimize
     php artisan route:trans:cache
     php artisan config:cache

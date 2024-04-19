@@ -3,7 +3,7 @@ title: BRL Bank Code List
 description: Resources {brand} Payment Integration. 
 ---
 
-<x-button href="/docs/banks">Back To Bank List</x-button>
+<x-button href="{{ url()->previous() }}">Back</x-button>
 
 | Bank Code              | Bank Name           |
 | ---------------------- | ------------------- |

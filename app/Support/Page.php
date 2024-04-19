@@ -43,25 +43,25 @@ class Page
         // check path
         abort_if(!$this->disk->exists($path), 404);
 
-        if (App::environment('production')) {
-            $cachedData = Cache::rememberForever('view.' . md5($path), function () use ($path) {
-                $markdown = Markdown::convert($this->disk->get($path));
-                return [
-                    'content' => $markdown->getContent(),
-                    'frontmatter' => method_exists($markdown, 'getFrontMatter') ? $markdown->getFrontMatter() : null,
-                    'index' => $this->getSidebar(),
-                    'brand' => 'S88pay',
-                ];
-            });
-        } else {
-            $markdown = Markdown::convert($this->disk->get($path));
-            $cachedData = [
-                'content' => $markdown->getContent(),
-                'frontmatter' => method_exists($markdown, 'getFrontMatter') ? $markdown->getFrontMatter() : null,
-                'index' => $this->getSidebar(),
-                'brand' => 'S88pay',
-            ];
-        }
+        // if (App::environment('production')) {
+        //     $cachedData = Cache::rememberForever('view.' . md5($path), function () use ($path) {
+        //         $markdown = Markdown::convert($this->disk->get($path));
+        //         return [
+        //             'content' => $markdown->getContent(),
+        //             'frontmatter' => method_exists($markdown, 'getFrontMatter') ? $markdown->getFrontMatter() : null,
+        //             'index' => $this->getSidebar(),
+        //             'brand' => 'S88pay',
+        //         ];
+        //     });
+        // } else {
+        $markdown = Markdown::convert($this->disk->get($path));
+        $cachedData = [
+            'content' => $markdown->getContent(),
+            'frontmatter' => method_exists($markdown, 'getFrontMatter') ? $markdown->getFrontMatter() : null,
+            'index' => $this->getSidebar(),
+            'brand' => 'S88pay',
+        ];
+        // }
 
         return view($view, $cachedData);
     }

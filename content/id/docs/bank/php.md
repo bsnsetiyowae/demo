@@ -3,7 +3,7 @@ title: Daftar Kode Bank PHP
 description: Resources {brand} Payment Integration. 
 ---
 
-<x-button href="/docs/banks">Back To Bank List</x-button>
+<x-button href="{{ url()->previous() }}">Back</x-button>
 
 | Bank Code          | Bank Name                                    |
 | ------------------ | -------------------------------------------- |
@@ -75,7 +75,7 @@ description: Resources {brand} Payment Integration.
 
 # Maintenance
 
-<x-button href="/docs/banks">Back To Bank List</x-button>
+<x-button href="{{ url()->previous() }}">Back</x-button>
 
 | Bank Code  | Bank Name                           |
 | ---------- | ----------------------------------- |

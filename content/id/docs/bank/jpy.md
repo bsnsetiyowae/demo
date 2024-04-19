@@ -3,6 +3,8 @@ title: Daftar Kode Bank JPY
 description: Resources {brand} Payment Integration. 
 ---
 
+<x-button href="{{ url()->previous() }}">Back</x-button>
+
 For JPY Daftar Kode Bank use API:
 
 ```bash
