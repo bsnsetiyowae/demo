@@ -39,5 +39,5 @@
 @task('install-dependencies')
     composer install --no-interaction --quiet --no-dev --prefer-dist --optimize-autoloader
 
-    php artisan migrate --force
+    {{-- php artisan migrate --force --}}
 @endtask
