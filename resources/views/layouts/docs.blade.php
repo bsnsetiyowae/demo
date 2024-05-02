@@ -88,7 +88,7 @@
                                     </div>
                                 </div>
 
-                                <div id="searchbar"></div>
+                                {{-- <div id="searchbar"></div> --}}
 
                             </div>
 
@@ -113,7 +113,7 @@
             <!-- Mobile Navigation Menu -->
             <div :class="{ 'block': open, 'hidden': !open }"
                 class="block h-full w-full flex-auto overflow-y-auto overflow-x-hidden bg-white px-4 lg:hidden lg:px-12"
-                x-cloak>
+                x-cloak >
                 <div class="docs_sidebar h-[calc(100vh-10rem)]">
                     {!! $index !!}
                 </div>
