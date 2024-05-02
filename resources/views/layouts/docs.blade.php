@@ -19,22 +19,9 @@
     <!-- Scripts -->
     <script src="{{ mix('build/js/app.js') }}" defer></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typesense-docsearch-css@0.3.0" />
-    <script>
-        docsearch({
-            container: '#docsearch',
-            typesenseCollectionName: 'example', // Should match the collection name you mention in the docsearch scraper config.js
-            typesenseServerConfig: {
-                nodes: [{
-                    host: 'localhost', // For Typesense Cloud use xxx.a1.typesense.net
-                    port: '8108', // For Typesense Cloud use 443
-                    protocol: 'http' // For Typesense Cloud use https
-                }],
-                apiKey: '<SEARCH_API_KEY>', // Use API Key with only Search permissions
-            },
+    <!-- Before the closing head -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typesense-docsearch-css@0.4.1/dist/style.min.css">
 
-        });
-    </script>
 </head>
 
 <body class="antialiased">
@@ -72,7 +59,7 @@
         }
     }" @scroll.window="scrollY = window.scrollY">
 
-        <header class="sticky top-0 z-40 flex h-screen max-h-screen flex-col" :class="{ 'h-screen': open }">
+        <header class="container sticky top-0 z-40 flex h-screen max-h-screen flex-col" :class="{ 'h-screen': open }">
             <div class="h-18 block w-full flex-shrink-0 flex-grow-0">
                 <nav class="relative w-full border-b bg-white px-4 py-2 sm:px-6 lg:px-8" x-ref="menu">
                     <!-- Primary Navigation Menu -->
@@ -90,16 +77,6 @@
 
                             <div class="flex w-full justify-end">
                                 <div class="ml-10 flex w-full items-center justify-end">
-                                    {{-- <button
-                                        class="hover:bg-transparency-box-5 flex cursor-pointer select-none items-center space-x-0 overflow-hidden rounded-lg bg-transparent px-3 py-1 transition-colors lg:hidden lg:space-x-2"
-                                        id="docsearch">
-                                        <div>
-                                            <x-icons name="magnifying-glass" class="h-5 w-5" />
-                                        </div>
-                                        <span class="leading-xl text-base">
-                                            <div id="searchbar-nav"></div>
-                                        </span>
-                                    </button> --}}
 
                                     <x-language-switcher />
 
@@ -111,7 +88,10 @@
                                     </div>
                                 </div>
 
+                                <div id="searchbar"></div>
+
                             </div>
+
 
                             <!-- Hamburger -->
                             <div class="-mr-2 flex items-center lg:hidden">
@@ -141,7 +121,7 @@
 
         </header>
 
-        <div class="mx-auto items-start gap-x-8 scroll-smooth px-4 py-4 sm:px-6 md:flex lg:px-8">
+        <div class="container mx-auto items-start gap-x-8 scroll-smooth px-4 py-4 sm:px-6 md:flex lg:px-8">
             <aside
                 class="sticky top-24 hidden min-w-[280px] max-w-[280px] shrink-0 overflow-y-auto px-4 lg:block lg:px-6 xl:px-8">
                 <nav id="indexed-nav" class="block lg:mt-4">
@@ -153,7 +133,26 @@
             {{ $slot }}
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4"></script>
+    <!-- Before the closing body -->
+    <script src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4.1/dist/umd/index.min.js"></script>
+
+    <script>
+        docsearch({
+            container: '#searchbar',
+            typesenseCollectionName: 'companies', // Should match the collection name you mention in the docsearch scraper config.js
+            typesenseServerConfig: {
+                nodes: [{
+                    host: 'localhost', // For Typesense Cloud use xxx.a1.typesense.net
+                    port: '8108', // For Typesense Cloud use 443
+                    protocol: 'http' // For Typesense Cloud use https
+                }],
+                apiKey: 'w3RRPN5Fnka5NOlW8n4hl6NjabLoxy4P', // Use API Key with only Search permissions
+            },
+            typesenseSearchParameters: { // Optional.
+                // filter_by: 'version_tag:=0.21.0' // Useful when you have versioned docs
+            },
+        });
+    </script>
 </body>
 
 </html>

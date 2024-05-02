@@ -1,6 +1,6 @@
-@servers(['web' => '127.0.0.1'])
+@servers(['localhost' => '127.0.0.1'])
 
-@story('deploy')
+@story('build')
     update-code
     install-dependencies
     clean_up

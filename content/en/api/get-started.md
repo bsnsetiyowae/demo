@@ -20,7 +20,7 @@ For example, if we want to make a payment request, we use [Payment Endpoint](/ap
 
 For example, to make request in our services.
 
-```php
+```php title="Combine Parameters"
 $str = "merchant_code=xxx&'
     .'merchant_api_key=xxx&'
     .'transaction_code=xxx&'
@@ -37,8 +37,8 @@ Refer to security on pre-requirements, the attribute to send is usually just usi
 
 Encryption sample:
 
-```php
-$key = encrypt_decrypt('encrypt', $str, '{your_api_key}', '{your_secret_key})
+```php title="Encrypt"
+$key = encrypt_decrypt('encrypt', $str, '{your_api_key}', '{your_secret_key}')
 ```
 
 ### Done

@@ -16,6 +16,13 @@ module.exports = {
             center: true,
         },
         extend: {
+            typography: {
+                DEFAULT: {
+                    css: {
+                        maxWidth: '0', // add required value here
+                    }
+                }
+            },
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
                 mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono]

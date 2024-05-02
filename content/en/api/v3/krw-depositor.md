@@ -10,7 +10,7 @@ toc: false
 
 ## Submit Deposit Account
 
-operator need to submit depositor Account to complete payment request.
+Operator need to submit depositor Account to complete payment request.
 
 ### Request Body
 

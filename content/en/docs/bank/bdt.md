@@ -1,6 +1,6 @@
 ---
 title: BDT Bank Code List
-description: Resources {brand} Payment Integration. 
+description: Resources {brand} Payment Integration.
 ---
 
 <x-button href="{{ url()->previous() }}">Back</x-button>

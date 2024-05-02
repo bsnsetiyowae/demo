@@ -6,8 +6,7 @@ It's possible to set up a successful callback page via Back Office. When the tra
 
 Sample callback success URL format set on the Back Office:
 
-```bash
-Example callback URL:
+```bash title="Example callback URL"
 https://www.example.com/success
 ```
 

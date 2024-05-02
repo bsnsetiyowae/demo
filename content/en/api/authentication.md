@@ -15,7 +15,8 @@ The encrypted parameters are decrypted and validated by our system using the sam
 We have our own algorithm for making requests to hit our endpoint. This algorithm referred to the [security pre-requirements](/docs/pre-requirements#security) which requires to generate key for each transaction.
 
 ## Template Code
-we provide some code snippets to help in development.
+
+We provide some code snippets to help in development.
 
 <x-code-group>
 

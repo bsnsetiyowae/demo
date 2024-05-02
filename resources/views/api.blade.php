@@ -1,8 +1,7 @@
 <x-docs-layout>
-    <main @class([
-        'flex-1 prose max-w-3xl',
-        'max-w-none' => isset($frontmatter['toc']) && !$frontmatter['toc'] ?? false,
-    ])>
+    @php($toc = isset($frontmatter['toc']) ? $frontmatter['toc'] : true)
+
+    <main @class(['flex-1 prose w-full min-w-full', 'max-w-none' => !$toc, 'max-w-4xl' => $toc])>
         <article class="pb-12">
             @isset($frontmatter['title'])
                 <h1>{{ preg_replace('/{brand}/', $brand, $frontmatter['title']) }}</h1>
@@ -26,7 +25,7 @@
 
     </main>
 
-    @if ($frontmatter['toc'] ?? true)
+    @if ($toc)
         <x-table-of-content />
     @endif
 

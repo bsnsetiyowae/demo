@@ -13,9 +13,11 @@
         "graham-campbell/markdown": "14.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/breeze": "1.9.2",
+        "laravel/envoy": "^2.9",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "league/commonmark": "^2.4",
+        "livewire/livewire": "^2.12",
         "mcamara/laravel-localization": "^2.0",
         "symfony/yaml": "^5.4",
         "torchlight/torchlight-commonmark": "^0.5.5"
