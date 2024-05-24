@@ -7,7 +7,7 @@ description: Resources {brand} Payment Integration.
 | `BDT`         | [Bangladesh Taka](/docs/bank/bdt)   |
 | `BRL`         | [Brazilian Real](/docs/bank/brl)    |
 | `CNY`         | [Chinese Yuan](/docs/bank/cny)      |
-| `INR`         | [India Rupee](/docs/bank/inr)       |
+| `INR`         | India Rupee       |
 | `IDR`         | [Indonesian Rupiah](/docs/bank/idr) |
 | `JPY`         | [Japanese Yen](/docs/bank/jpy)      |
 | `KRW`         | [Korean Won](/docs/bank/krw)        |
