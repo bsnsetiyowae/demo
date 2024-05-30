@@ -1,7 +1,7 @@
 <div class="mb-6">
 
--   <x-icons name="reader" class="text-white"/> [<span class="absolute inset-0"></span>Documentation](/docs)
--   <x-icons name="code" class="text-white"/> [<span class="absolute inset-0"></span>API Reference](/api)
+-   <x-icons name="reader" class="text-white"/> [Documentation](/docs)
+-   <x-icons name="code" class="text-white"/> [API Reference](/api)
 
 </div>
 
