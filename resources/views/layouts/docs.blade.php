@@ -8,11 +8,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d55b5b">
+    <link rel="icon" href="./favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#d55b5b">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <!-- Fonts -->
@@ -31,7 +32,7 @@
 
 </head>
 
-<body class="antialiased">
+<body class="antialiased scroll-smooth">
     <div x-data="{
         open: false,
         toggleMenu() {
@@ -144,6 +145,12 @@
     <script src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4.1/dist/umd/index.min.js"></script>
 
     <script>
+        let aside = document.querySelector('aside');
+        let links = Array.from(aside.querySelectorAll('a[href$="{{ parse_url(LaravelLocalization::getNonLocalizedURL(Request::getPathInfo()), PHP_URL_PATH) }}" i]'));
+        let lastLink = links[links.length - 1];
+        aside.scrollTop = lastLink.offsetTop - 48;
+
+
         docsearch({
             container: '#searchbar',
             typesenseCollectionName: 'companies', // Should match the collection name you mention in the docsearch scraper config.js
