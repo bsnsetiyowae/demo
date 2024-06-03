@@ -1,22 +1,30 @@
 ---
-title: 提款
-description: 提款 API。
+title: 付款
+method: POST
+label: /api/v1/payout/{merchant_code}
+toc: false
 ---
 
-## 提交提款请求
+<x-row>
+<x-col class="md:max-w-lg">
 
-该 API 用于提交提款请求。它需要一些参数来提交提款。检查交易状态。需要使用 `secret key` 和 `merchant key` 对请求进行加密。
+## 处理付款
 
-### 请求体
+此 API 用于提交付款请求。它需要一些参数来提交付款并检查交易状态。需要使用 `secret key` 和 `merchant key` 加密请求。
+
+### 请求正文
 
 <x-properties>
   <x-property name="key" type="string" required>
   
-  使用 API 密钥和 API 密钥加密从 [parameters](#parameters) 生成的密钥。
+  使用 API 密钥和 API 秘钥加密生成的 [参数](#parameters) 生成的密钥。
   </x-property>
 </x-properties>
 
-```bash
+</x-col>
+<x-col sticky>
+
+```bash title="cURL"
 curl --request POST \
   --url https://staging.{brand}.net/api/v1/payout/{merchant_code} \
   --header 'Content-Type: application/json' \
@@ -24,63 +32,36 @@ curl --request POST \
   "key": "<string>"
     }'
 ```
+</x-col>
+</x-row>
 
 ---
 
-### 参数
-
-```markdown
----
-title: 提款
-description: 提款 API。
----
-
-## 提交提款请求
-
-该 API 用于提交提款请求。它需要一些参数来提交提款。检查交易状态。需要使用 `secret key` 和 `merchant key` 对请求进行加密。
-
-### 请求体
-
-<x-properties>
-  <x-property name="key" type="string" required>
-  
-  使用 API 密钥和 API 密钥加密从 [parameters](#parameters) 生成的密钥。
-  </x-property>
-</x-properties>
-
-```bash
-curl --request POST \
-  --url https://staging.{brand}.net/api/v1/payout/{merchant_code} \
-  --header 'Content-Type: application/json' \
-  --data '{
-  "key": "<string>"
-    }'
-```
-
----
+<x-row>
+<x-col class="md:max-w-lg">
 
 ### 参数
 
 <x-properties>
   <x-property name="merchant_code" type="string" required>
-  由提供商提供。
+  由服务提供商提供。
   </x-property>
   <x-property name="transaction_code" type="string" required>
-  运营商生成。每个交易必须是唯一的。
+  由操作员生成。每个交易必须唯一。
   </x-property>
   <x-property name="transaction_timestamp" type="integer" required>
-  运营商生成。
+  由操作员生成。
 
-  此参数描述了交易请求的时间范围。关于时间戳的更详细信息，请访问 [epochconverter](https://www.epochconverter.com/)。
+  此参数描述交易请求时间范围。有关时间戳的更详细信息，请访问 [epochconverter](https://www.epochconverter.com/)。
 
-  请注意，我们仅在这些限制上处理时间戳。
+  请注意，我们只处理这些限制的时间戳。
 
-  `min`: 现在之前的1小时
+  `min`: 当前时间之前的 1 小时
 
-  `max`: 现在之后的5分钟
+  `max`: 当前时间之后的 5 分钟
   </x-property>
   <x-property name="payout_code" type="string" required>
-  例如 `P001`。请联系管理员获取您的付款代码。
+  例如 `P001`。请联系管理员获取您的支付代码。
   </x-property>
   <x-property name="transaction_amount" type="double" required>
     交易金额。
@@ -89,48 +70,48 @@ curl --request POST \
     用户标识符。
   </x-property>
   <x-property name="currency_code" type="string" required>
-  请参考 [currency list](/docs/currency)。
+  请参阅 [货币列表](/docs/currency)。
   </x-property>
   <x-property name="address" type="string" required>
-  **加密方式** 用于加密
-  用户的加密钱包地址。
+  **加密付款时必填**
+  这是用户的加密钱包地址。
   </x-property>
   <x-property name="bank_account_number" type="string" required>
-  **必需的**（INR，CNY，VND，THB，KRW，BDT，JPY，BRL 提款）BRL 使用 11 位身份证。
+  **必填** (INR, CNY, VND, THB, KRW, BDT, JPY, BRL 付款) BRL 使用 11 位身份证号码
   </x-property>
   <x-property name="ifsc_code" type="string" required>
-  **仅适用于** INR 提款。
+  **仅对 INR 付款必填**
   </x-property>
   <x-property name="bank_code" type="string" required>
-  **必需的**（INR，CNY，VND，THB，BDT，IDR，MYR，KRW，JPY，BRL 和 PHP 提款）
+  **必填** (INR, CNY, VND, THB, BDT, IDR, MYR, KRW, JPY, BRL 和 PHP 付款)
 
-  在 {brand} 后台的提款菜单中显示的可用 **INR 银行代码**。
+  可用的 **INR 银行代码** 显示在 {brand} 后台提现菜单中的银行代码部分。
 
-  可用的 [CNY bank code](/docs/bank/cny)。
+  可用的 [CNY 银行代码](/docs/bank/cny)。
 
-  可用的 [THB bank code](/docs/bank/thb)。
+  可用的 [THB 银行代码](/docs/bank/thb)。
 
-  可用的 [BRL bank code](/docs/bank/brl)。
+  可用的 [BRL 银行代码](/docs/bank/brl)。
   </x-property>
   <x-property name="bank_name" type="string" required>
-  **必需的**（INR，CNY，VND，THB，BDT，IDR，MYR，KRW，JPY，BRL 和 PHP 提款）
+  **必填** (INR, CNY, VND, THB, BDT, IDR, MYR, KRW, JPY, BRL 和 PHP 付款)
 
-  在 {brand} 后台的银行代码部分显示的可用 **INR 银行代码**。
+  可用的 **INR 银行代码** 显示在 {brand} 后台提现菜单中的银行代码部分。
 
-  可用的 [CNY bank code](/docs/bank/cny)。
+  可用的 [CNY 银行代码](/docs/bank/cny)。
 
-  可用的 [THB bank code](/docs/bank/thb)。
+  可用的 [THB 银行代码](/docs/bank/thb)。
 
-  可用的 **BRL** 使用账户价值。
+  可用的 **BRL** 使用账户值。
   </x-property>
   <x-property name="branch_code" type="string">
-  **仅适用于** JPY。分行代码。
+  **仅对 JPY 必填**。分行代码。
   </x-property>
   <x-property name="account_name" type="string" required>
   银行账户 / 钱包名称。
   </x-property>
   <x-property name="callback_url" type="string">
-  除了后台设置的 URL 回调。
+  除了后台设置的 URL 之外的回调 URL。
   </x-property>
 </x-properties>
 
@@ -157,7 +138,7 @@ curl --request POST \
 }
 ```
 
-这些参数在通过 [key](#request-body) 请求体发送之前必须进行 [加密](/api/authentication)。
+这些参数必须在通过 [key](#request-body) 正文发送之前进行 [加密](/api/authentication)。
 
 </x-col>
 </x-row>
@@ -167,9 +148,9 @@ curl --request POST \
 <x-row>
 <x-col class="lg:max-w-md">
 
-### 返回
+### 返回值
 
-返回交易状态对象。如果发生错误，该调用将返回一个 [错误](/api/errors)。
+返回一个交易状态对象。如果发生错误，此调用将返回一个 [错误](/api/errors)。
 
 </x-col>
 <x-col sticky>
