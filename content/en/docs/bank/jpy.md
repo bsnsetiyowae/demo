@@ -3,7 +3,7 @@ title: JPY Bank Code List
 description: Resources {brand} Payment Integration. 
 ---
 
-<x-button href="{{ url()->previous() }}">Back</x-button>
+<x-button handle="back" to="/docs/banks">Back</x-button>
 
 For JPY Bank Code List use API:
 

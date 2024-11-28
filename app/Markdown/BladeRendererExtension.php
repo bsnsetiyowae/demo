@@ -2,6 +2,7 @@
 
 namespace App\Markdown;
 
+use App\Services\Seapay;
 use Illuminate\Support\Facades\Blade;
 use illuminate\Support\Str;
 use League\CommonMark\Environment\Environment;
@@ -18,9 +19,15 @@ use League\CommonMark\Renderer\HtmlRenderer;
 
 class BladeRendererExtension implements ExtensionInterface
 {
-    protected Environment $environment;
+    protected $environment;
 
-    protected array $rendered = [];
+    protected $rendered = [];
+
+    protected $seapay;
+
+    public function __construct() {
+       $this->seapay = new Seapay(config('services.seapay.enpoint'));
+    }
 
     public function register(EnvironmentBuilderInterface $environment): void
     {
@@ -81,8 +88,21 @@ class BladeRendererExtension implements ExtensionInterface
         // The HTML that Commonmark generated
         $content = $event->getOutput()->getContent();
 
+        preg_match_all('/\$(\w+)/', $content, $matches);
+
+        $variables = array_unique($matches[1]);
+
+        $availableData = $this->getData();
+
+        $data = array_filter(
+            $availableData,
+            function ($key) use($variables) {return in_array($key, $variables);
+            },
+            ARRAY_FILTER_USE_KEY
+        );  
+
         // First render the output without code blocks.
-        $content = Blade::render($content);
+        $content = Blade::render($content, $data);
 
         // Then add the code blocks back in.
         $content = Str::replace($search, $replace, $content);
@@ -98,5 +118,14 @@ class BladeRendererExtension implements ExtensionInterface
         return $node instanceof FencedCode
             || $node instanceof IndentedCode
             || $node instanceof Code;
+    }
+
+    protected function getData(){
+
+        $subbanks = $this->seapay->getAvailableSubbanks();
+
+        return [
+            'subbanks' => $subbanks
+        ];
     }
 }
