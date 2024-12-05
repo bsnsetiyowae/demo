@@ -37,17 +37,15 @@ class Page
     public function view(string $view)
     {
         $path = "$this->locale/$this->type/$this->page.md";
+        $key = 'view.' . $this->locale . '.' . $this->type . '.' . $this->page;
 
         abort_if(!$this->disk->exists($path), 404);
 
-        if (App::environment('production')) {
-            $cachedData = Cache::rememberForever('view.' . md5($path), function () use ($path) {
-                $markdown = Markdown::convert($this->disk->get($path));
+        $cachedData = App::environment('production')
+            ? Cache::rememberForever($key, function () use ($path) {
                 return $this->getViewData($path);
-            });
-        } else {
-            $cachedData = $this->getViewData($path);
-        }
+            })
+            : $this->getViewData($path);
 
         return view($view, $cachedData);
     }
@@ -61,7 +59,6 @@ class Page
     {
         $markdown = Markdown::convert($this->disk->get($path));
         $brand = ucwords(config('site.name'));
-        $apiUrl = config('site.{api_url}');
 
         $content = $markdown->getContent();
         $frontmatter = method_exists($markdown, 'getFrontMatter') ? $markdown->getFrontMatter() : [];
@@ -74,7 +71,6 @@ class Page
             $frontmatter['description'] = preg_replace('/{brand}/i', $brand, $frontmatter['description']);
         }
 
-        $content = preg_replace('/{{api_url}}/i', $apiUrl, $content);
         $content = preg_replace('/{brand}/i', $brand, $content);
 
         return [
