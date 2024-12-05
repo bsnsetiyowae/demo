@@ -26,7 +26,7 @@ toc: false
 
 ```bash title="cURL"
 curl --request GET \
---url https://staging.s88pay.net/api/v1/balance/{merchant_code}?key={string}
+--url {api_url}/api/v1/balance/{merchant_code}?key={string}
 ```
 
 </x-col>

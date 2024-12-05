@@ -2,6 +2,7 @@
 
 namespace App\Markdown;
 
+use App\Support\SiteConfig;
 use League\CommonMark\Environment\EnvironmentBuilderInterface;
 use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
 use League\CommonMark\Extension\CommonMark\Node\Block\IndentedCode;
@@ -108,6 +109,9 @@ class TorchlightExtension extends BaseExtension implements ExtensionInterface, N
      */
     protected function getLiteralContent($node)
     {
-        return $node->getLiteral();
+        $config = SiteConfig::get();
+        $content = preg_replace('/{api_url}/i', $config['api_url'], $node->getLiteral());
+
+        return $content;
     }
 }

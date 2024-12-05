@@ -27,7 +27,7 @@ This API is used to create payment requests. This API requires 1 `key` parameter
 
 ```bash title="cURL"
 curl --request POST \
-  --url https://staging.s88pay.net/api/{merchant_code}/v3/dopayment \
+  --url {api_url}/api/{merchant_code}/v3/dopayment \
   --header 'Content-Type: application/json' \
   --data '{
       "key": "<string>"

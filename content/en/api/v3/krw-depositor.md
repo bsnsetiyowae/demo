@@ -27,7 +27,7 @@ Operator need to submit depositor Account to complete payment request.
 
 ```bash title="cURL"
 curl --request POST \
-  --url https://staging.s88pay.net/api/{merchant_code}/v3/krw-submit-information \
+  --url {api_url}/api/{merchant_code}/v3/krw-submit-information \
   --header 'Content-Type: application/json' \
   --data '{
     "key": "<string>"

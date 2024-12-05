@@ -6,16 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <!-- favicon -->
-    <link rel="icon" href="./favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/site.webmanifest">
-    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#d55b5b">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    {!! SiteConfig::metadata() !!}
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -75,11 +66,9 @@
                         <div class="flex h-14 justify-between">
                             <!-- Logo -->
                             <div class="flex flex-shrink-0 items-center">
-                                <a href=""
+                                <a href="/"
                                     class="flex items-center before:absolute before:inset-0 before:-left-[calc(90%-6rem)] before:w-full before:skew-x-[25deg] before:bg-stone-800">
-
-                                    <img src="https://www-nurhuda.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.d06cb0fa.png&w=1920&q=75"
-                                        class="z-10 block h-9 w-auto fill-current text-white">
+                                    <img src={{ asset('logo/' . config('site.logo'), ) }} class="z-10 block h-10 w-auto fill-current text-white">
                                 </a>
                             </div>
 
@@ -144,28 +133,13 @@
     <!-- Before the closing body -->
     <script src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4.1/dist/umd/index.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/json-query@2.2.2/index.min.js"></script>
+
     <script>
         let aside = document.querySelector('aside');
         let links = Array.from(aside.querySelectorAll('a[href$="{{ parse_url(LaravelLocalization::getNonLocalizedURL(Request::getPathInfo()), PHP_URL_PATH) }}" i]'));
         let lastLink = links[links.length - 1];
         aside.scrollTop = lastLink.offsetTop - 48;
-
-
-        docsearch({
-            container: '#searchbar',
-            typesenseCollectionName: 'companies', // Should match the collection name you mention in the docsearch scraper config.js
-            typesenseServerConfig: {
-                nodes: [{
-                    host: 'localhost', // For Typesense Cloud use xxx.a1.typesense.net
-                    port: '8108', // For Typesense Cloud use 443
-                    protocol: 'http' // For Typesense Cloud use https
-                }],
-                apiKey: 'w3RRPN5Fnka5NOlW8n4hl6NjabLoxy4P', // Use API Key with only Search permissions
-            },
-            typesenseSearchParameters: { // Optional.
-                // filter_by: 'version_tag:=0.21.0' // Useful when you have versioned docs
-            },
-        });
     </script>
 </body>
 

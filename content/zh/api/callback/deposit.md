@@ -15,7 +15,7 @@ toc: false
 
 ```bash title="cURL"
 curl --request POST \
---url https://s88pay.net/api/v1/transaction/resend-callback/SKU20210909025705 \
+--url {api_url}/api/v1/transaction/resend-callback/SKU20210909025705 \
 --header 'Content-Type: application/json' \
 --data '{
     "key": "<string>",

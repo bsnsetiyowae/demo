@@ -16,7 +16,7 @@ For key, you need to decrypt with `api_key` and `api_secret`. Besides the key, w
 
 ```bash title="cURL"
 curl --request POST \
---url https://s88pay.net/api/v1/transaction/resend-callback/SKU20210909025705 \
+--url {api_url}/api/v1/transaction/resend-callback/SKU20210909025705 \
 --header 'Content-Type: application/json' \
 --data '{
     "key": "<string>",

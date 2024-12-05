@@ -6,6 +6,7 @@ use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class Page
 {
@@ -35,33 +36,18 @@ class Page
 
     public function view(string $view)
     {
-        // check view
-        abort_if(!view()->exists($view), 404);
-
         $path = "$this->locale/$this->type/$this->page.md";
 
-        // check path
         abort_if(!$this->disk->exists($path), 404);
 
-        // if (App::environment('production')) {
-        //     $cachedData = Cache::rememberForever('view.' . md5($path), function () use ($path) {
-        //         $markdown = Markdown::convert($this->disk->get($path));
-        //         return [
-        //             'content' => $markdown->getContent(),
-        //             'frontmatter' => method_exists($markdown, 'getFrontMatter') ? $markdown->getFrontMatter() : null,
-        //             'index' => $this->getSidebar(),
-        //             'brand' => 'S88pay',
-        //         ];
-        //     });
-        // } else {
-        $markdown = Markdown::convert($this->disk->get($path));
-        $cachedData = [
-            'content' => $markdown->getContent(),
-            'frontmatter' => method_exists($markdown, 'getFrontMatter') ? $markdown->getFrontMatter() : null,
-            'index' => $this->getSidebar(),
-            'brand' => 'S88pay',
-        ];
-        // }
+        if (App::environment('production')) {
+            $cachedData = Cache::rememberForever('view.' . md5($path), function () use ($path, $brand) {
+                $markdown = Markdown::convert($this->disk->get($path));
+                return $this->getViewData($path);
+            });
+        } else {
+            $cachedData = $this->getViewData($path);
+        }
 
         return view($view, $cachedData);
     }
@@ -69,5 +55,91 @@ class Page
     public function getSidebar()
     {
         return Markdown::convert($this->disk->get("$this->locale/docs/documentation.md"));
+    }
+
+    public function getViewData($path)
+    {
+        $markdown = Markdown::convert($this->disk->get($path));
+        $brand = ucwords(config('site.name'));
+        $apiUrl = config('site.{api_url}');
+
+        $content = $markdown->getContent();
+        $frontmatter = method_exists($markdown, 'getFrontMatter') ? $markdown->getFrontMatter() : [];
+
+        if (isset($frontmatter['title'])) {
+            $frontmatter['title'] = preg_replace('/{brand}/i', $brand, $frontmatter['title']);
+        }
+
+        if (isset($frontmatter['description'])) {
+            $frontmatter['description'] = preg_replace('/{brand}/i', $brand, $frontmatter['description']);
+        }
+
+        $content = preg_replace('/{{api_url}}/i', $apiUrl, $content);
+        $content = preg_replace('/{brand}/i', $brand, $content);
+
+        return [
+            'content' => $content,
+            'frontmatter' => $frontmatter,
+            'index' => $this->getSidebar(),
+            'brand' => $brand,
+        ];
+    }
+
+    public function getArticlesData($data)
+    {
+        $dom = new \DOMDocument();
+        libxml_use_internal_errors(true);
+
+        $dom->loadHTML($data['content']);
+
+        $xpath = new \DOMXPath($dom);
+
+        $headings = $xpath->query('//h1 | //h2 | //h3 | //h4 | //h5 | //h6');
+
+        $articleData = [];
+
+        foreach ($headings as $heading) {
+            $headingText = preg_replace('/{brand}/', $data['brand'], preg_replace('/\s+/', ' ', $heading->textContent));
+
+            $nextSibling = $heading->nextSibling;
+            while ($nextSibling && $nextSibling->nodeName !== 'p') {
+                $nextSibling = $nextSibling->nextSibling;
+            }
+
+            $paragraphText = $nextSibling ? trim($nextSibling->textContent) : null;
+            $paragraphText = preg_replace('/{brand}/', $data['brand'], preg_replace('/\s+/', ' ', $paragraphText));
+
+            $anchor = $xpath->query('.//a', $heading)->item(0);
+            $linkHref = $anchor ? config('app.url') . "/$this->type/$this->page" . $anchor->getAttribute('href') : null;
+
+            if ($headingText && $paragraphText) {
+                $articleData[] = [
+                    'heading' => $headingText,
+                    "lang" => $this->locale,
+                    'href' => $linkHref,
+                    'paragraph' => $paragraphText,
+                ];
+            }
+        }
+    }
+
+    public function getJsonData()
+    {
+        $files = File::allFiles(base_path('Content'));
+
+        $fileCollection = collect($files)->map(function ($file) {
+            return $file->getRelativePathname();
+        });
+
+        $json = $fileCollection->map(function ($path) {
+            $data = [
+                "content" => Markdown::convert($this->disk->get($path))->getContent(),
+                "brand" => 'S88pay',
+            ];
+
+            $this->getArticlesData($data);
+        });
+
+        return $json;
     }
 }

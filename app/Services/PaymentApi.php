@@ -8,7 +8,7 @@ use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
-class Seapay
+class PaymentApi
 {
 
     use BuildBaseRequest;
@@ -24,7 +24,7 @@ class Seapay
     public function getAvailableSubbanks(): array
     {
         // return Cache::remember('get-available-subbanks', now()->addMinutes(60), function () {
-            return $this->get($this->withBaseUrl(), "/api/sub-bank/available")->json();
+            return $this->get($this->withBaseUrl(), "/api/sub-bank/available")->json() ?? [];
         // });
     }
 

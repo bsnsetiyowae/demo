@@ -812,3 +812,7 @@ code.torchlight .line-number,code.torchlight .summary-caret {
 .torchlight details:not([open]) .summary-hide-when-open {
     display: inline
 }
+
+pre code[data-lang="text"] {
+    white-space: normal;
+}

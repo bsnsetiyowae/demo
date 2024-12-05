@@ -27,7 +27,7 @@ toc: false
 
 ```bash title="cURL"
 curl --request GET \
-  --url https://staging.s88pay.net/{merchant_code}/v2/dopayment?key={string}
+  --url {api_url}/{merchant_code}/v2/dopayment?key={string}
 ```
 
 </x-col>
@@ -89,21 +89,8 @@ curl --request GET \
 </x-col>
 <x-col sticky>
 
-```json title="参数对象"
-{
-  "merchant_code": "ABC123",
-  "merchant_api_key": "xyz456",
-  "transaction_code": "TRX123456789",
-  "transaction_timestamp": 1649699762,
-  "transaction_amount": 100.50,
-  "payment_code": "P001",
-  "user_id": "user123",
-  "currency_code": "USD",
-  "bank_code": null,
-  "callback_url": "https://example.com/callback",
-  "return_url": "https://example.com/return",
-  "random_bank_code": null
-}
+```text title="參數範例"
+merchant_code=ABC123&merchant_api_key=xyz456&transaction_code=TRX123456789&transaction_timestamp=1649699762&transaction_amount=100.50&payment_code=P001&user_id=user123&currency_code=USD&bank_code=null&callback_url=https://example.com/callback&return_url=https://example.com/return&random_bank_code=null
 ```
 这些参数必须在通过 [key](#query-parameters) 查询发送之前进行 [加密](/api/authentication)。
 

@@ -27,7 +27,7 @@ This API is used to create payment requests. This API requires 1 `key` parameter
 
 ```bash title="cURL"
 curl --request POST \
-  --url https://staging.s88pay.net/api/{merchant_code}/v3/dopayment \
+  --url {api_url}/api/{merchant_code}/v3/dopayment \
   --header 'Content-Type: application/json' \
   --data '{
       "key": "<string>"
@@ -131,7 +131,7 @@ Returns a transaction status object. This call returns an [error](/api/errors) i
  "transaction_code": "TEST-DP-16873xxxxx",
  "amount": "510.00",
  "upi_id": "example@upi",
- "qr":"https://s88pay.net/imageencoded=true&url=aHR0cHM6Ly9hcGkucGF5cHJvc3R1ZG
+ "qr":"{api_url}/imageencoded=true&url=aHR0cHM6Ly9hcGkucGF5cHJvc3R1ZG
   vLmNvbS9hc3NldC91cGkvY2FjaGVkLzgzMmE1NmZlLTBkYzktNDc0Ni05NDhkLWFlYmY
   3E5NDlkMw==",
  "expired_at":"2023-06-22 15:06:04",

@@ -16,7 +16,6 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 */
 
 Route::get('/', function () {
-    dd("dsds");
     return redirect('/docs');
 });
 

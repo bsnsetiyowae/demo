@@ -30,7 +30,7 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'seapay' => [
-        'enpoint' => env('SEAPAY_ENPOINT'),
+    'payment' => [
+        'url' => env('PAYMENT_API_URL'),
     ]
 ];

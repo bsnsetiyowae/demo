@@ -2,10 +2,9 @@
 
 namespace App\Markdown;
 
-use App\Services\Seapay;
+use App\Services\PaymentApi;
 use Illuminate\Support\Facades\Blade;
 use illuminate\Support\Str;
-use League\CommonMark\Environment\Environment;
 use League\CommonMark\Environment\EnvironmentBuilderInterface;
 use League\CommonMark\Event\DocumentParsedEvent;
 use League\CommonMark\Event\DocumentRenderedEvent;
@@ -23,10 +22,10 @@ class BladeRendererExtension implements ExtensionInterface
 
     protected $rendered = [];
 
-    protected $seapay;
+    protected $api;
 
     public function __construct() {
-       $this->seapay = new Seapay(config('services.seapay.enpoint'));
+       $this->api = new PaymentApi(config('services.payment.url'));
     }
 
     public function register(EnvironmentBuilderInterface $environment): void
@@ -122,10 +121,10 @@ class BladeRendererExtension implements ExtensionInterface
 
     protected function getData(){
 
-        $subbanks = $this->seapay->getAvailableSubbanks();
+        $subbanks = $this->api->getAvailableSubbanks();
 
         return [
-            'subbanks' => $subbanks
+            'subbanks' => $subbanks,
         ];
     }
 }

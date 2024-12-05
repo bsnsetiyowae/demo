@@ -10,11 +10,6 @@
     -   [介绍](/docs)
     -   [前提条件](/docs/pre-requirements)
 
--   ## 资源
-
-    -   [商家货币](/docs/currency)
-    -   [银行代码](/docs/banks)
-
 -   ## API 参考
 
     -   [概览](/api)
@@ -30,13 +25,22 @@
     -   `POST` [ 支付请求](/api/payout)
     -   `GET` [ 获取余额](/api/balance)
 
--   ## API 功能 V3
+-   ## H2H API
 
     -   `POST` [ 支付请求](/api/v3/payment)
     -   `POST` [ 提交 UTR](/api/v3/submit-utr)
     -   `POST` [ 提交 RefNo](/api/v3/submit-refno)
+   
+-   ## Support 
+
     -   `POST` [ KRW 支付](/api/v3/krw-payment)
     -   `POST` [ KRW 提交存款人](/api/v3/krw-depositor)
+
+-   ## 资源
+
+    -   [商家货币](/docs/currency)
+    -   [银行代码](/docs/banks)
+
 
 -   ## 回调
 

@@ -27,7 +27,7 @@ This API is used to check the transaction status. It requires 1 paramter `key`, 
 
 ```bash title="cURL"
 curl --request POST \
---url https://staging.s88pay.net/api/v1/{merchant_code}/transactions/status \
+--url {api_url}/api/v1/{merchant_code}/transactions/status \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data key=string
 ```

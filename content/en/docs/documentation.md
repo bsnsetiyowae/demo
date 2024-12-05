@@ -10,11 +10,6 @@
     -   [Introduction](/docs)
     -   [Pre-Requirements](/docs/pre-requirements)
 
--   ## Resources
-
-    -   [Merchant Currency](/docs/currency)
-    -   [Banks Code](/docs/banks)
-
 -   ## API References
 
     -   [Overview](/api)
@@ -30,13 +25,21 @@
     -   `POST` [ Payout Request](/api/payout)
     -   `GET` [ Get Balance](/api/balance)
 
--   ## API Function V3
+-   ## H2H API
 
     -   `POST` [ Payment Request](/api/v3/payment)
     -   `POST` [ Submit UTR](/api/v3/submit-utr)
     -   `POST` [ Submit RefNo](/api/v3/submit-refno)
+
+-   ## Support
+
     -   `POST` [ KRW Payment](/api/v3/krw-payment)
     -   `POST` [ KRW Submit Depositor](/api/v3/krw-depositor)
+
+-   ## Resources
+
+    -   [Merchant Currency](/docs/currency)
+    -   [Banks Code](/docs/banks)
 
 -   ## Callback
 
