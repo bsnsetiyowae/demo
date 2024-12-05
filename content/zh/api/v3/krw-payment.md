@@ -1,5 +1,5 @@
 ---
-title: 支付请求
+title: KRW 支付请求
 description: 仅用于KRW的支付请求。
 method: POST
 label: /api/{merchant_code}/v3/krw-payment

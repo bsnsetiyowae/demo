@@ -1,4 +1,7 @@
-## Banks Code
+---
+title: Banks Code
+description: Banks code {brand} Payment Integration.
+---
 
 ### [BDT Bank Code](/docs/bank/bdt)
 

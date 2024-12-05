@@ -1,5 +1,5 @@
 ---
-title: 提交存款账户
+title: KRW 提交存款账户
 method: POST
 label: /api/{merchant_code}/v3/krw-payment
 toc: false

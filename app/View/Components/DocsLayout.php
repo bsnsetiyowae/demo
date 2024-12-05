@@ -8,14 +8,18 @@ use Illuminate\View\View;
 
 class DocsLayout extends Component
 {
-    /**
-     * Get the view / contents that represents the component.
-     */
+    public $title;
+    
+    public function __construct($title = null)
+    {
+        $this->title = $title;
+    }
     public function render(): View
     {
 
         $index = (new Page(app()->getLocale(), 'docs'))->getSidebar();
+        $title = $this->title;
 
-        return view('layouts.docs', compact('index'));
+        return view('layouts.docs', compact('index', 'title'));
     }
 }

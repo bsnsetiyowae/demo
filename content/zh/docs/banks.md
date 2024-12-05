@@ -1,4 +1,7 @@
-## 银行代码
+---
+title: 银行代码
+description: 銀行代號 {brand} 支付整合。
+---
 
 ### [BDT 银行代码](/docs/bank/bdt)
 

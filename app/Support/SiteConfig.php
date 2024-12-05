@@ -33,20 +33,24 @@ class SiteConfig
         $siteConfig = Config::get('site');
 
         $name = $siteConfig['name'];
-        $title = $meta['title'] ?? $siteConfig['meta']['title'];
+        $title = $siteConfig['meta']['title'];
         $description = $meta['description'] ?? $siteConfig['meta']['description'];
 
         $metadata = "";
 
-        if (isset($title)) {
+        if (empty($meta['title'])) {
             $metadata .= "<title>{$title}</title>";
         }
 
-        if (isset($description)) {
+        if (!empty($meta['title'])) {
+            $metadata .= "<title>{$meta['title']} - {$title}</title>";
+        }
+        
+        if (!empty($description)) {
             $metadata .= "<meta name='description' content='{$description}'>";
         }
 
-        if (isset($name)) {
+        if (!empty($name)) {
             $metadata .= "<link rel='icon' href='" . asset('favicon/'. strtolower($name) .'/favicon.ico') . "'>";
         }
 

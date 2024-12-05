@@ -1,4 +1,4 @@
-<x-docs-layout>
+<x-docs-layout title="{{ isset($frontmatter['title']) ? $frontmatter['title'] : null }}">
     @php($toc = isset($frontmatter['toc']) ? $frontmatter['toc'] : true)
 
     <main @class(['flex-1 prose w-full', 'max-w-none' => !$toc, 'max-w-4xl' => $toc])>

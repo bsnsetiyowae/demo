@@ -12,13 +12,13 @@ return [
     ],
 
     "demo.test" => [
-        'name' => 'rubikpay',
-        'logo' => 'rubikpay.png',
+        'name' => 's88pay',
+        'logo' => 's88.png',
         'meta' => [
-            'title' => 'RubikPay Documentation',
+            'title' => 'S88Pay Documentation',
             'description' => '',
         ],
-        'api_url' => 'https://api.rubikpay.com',
+        'api_url' => 'https://api.s88pay.net',
     ],
 
     "s88pay.net" => [

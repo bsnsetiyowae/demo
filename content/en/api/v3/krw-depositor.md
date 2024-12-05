@@ -1,5 +1,5 @@
 ---
-title: Submit Depositor Account
+title: KRW Submit Depositor Account
 method: POST
 label: /api/{merchant_code}/v3/krw-payment
 toc: false

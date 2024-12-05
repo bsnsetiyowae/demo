@@ -1,5 +1,5 @@
 ---
-title: Payment Request
+title: KRW Payment Request
 description: Make payment request for KRW Only.
 method: POST
 label: /api/{merchant_code}/v3/krw-payment
