@@ -2,7 +2,6 @@
 
 namespace App\Support;
 
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Traits\Macroable;
 
@@ -15,6 +14,8 @@ class SiteConfig
         if (is_null($host)) {
             $host = request()->getHost();
         }
+
+        $host = Helpers::getRootDomain($host);
 
         // $siteConfig = Cache::rememberForever("config_site_{$host}", function () use ($host) {
             $sites = config('sites');
@@ -30,7 +31,8 @@ class SiteConfig
 
     public static function metadata($meta = [])
     {
-        $siteConfig = Config::get('site');
+        $siteConfig = self::get();
+
 
         $name = $siteConfig['name'];
         $title = $siteConfig['meta']['title'];
