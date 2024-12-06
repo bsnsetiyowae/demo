@@ -81,8 +81,17 @@ curl --request POST \
   <x-property name="bank_code" type="double" required>
     Required just on  [BDT](/docs/bank/bdt), [VND](/docs/bank/vnd), [THB](/docs/bank/thb), [IDR](/docs/bank/idr), [MYR](/docs/bank/myr), and [PHP](/docs/bank/php) online bank payment PaymentMethodChangeEvent.
   </x-property>
-  <x-property name="deposit_name" type="string" required>
+   <x-property name="deposit_name" type="string" required>
     Deposit name (mandatory for KRW).
+  </x-property>
+  <x-property name="callback_url" type="string">
+    Deposit name (mandatory for KRW).
+  </x-property>
+  <x-property name="identity_id" type="string" required>
+    Required for Turkey (TRY)
+  </x-property>
+  <x-property name="phone" type="string" required>
+    Required for BDT, 11 digits numbers without country code (ex. 01812345678 )
   </x-property>
 </x-properties>
 

@@ -6,40 +6,41 @@ title: 错误列表
 
 以下是 dopayment 端点的错误响应：
 
-| 错误代码 | 描述                   |
-| -------- | ---------------------- |
-| `109`    | 参数不完整             |
-| `110`    | 银行 ID 无效           |
-| `111`    | 交易代码无效（不唯一） |
-| `112`    | 时间戳无效             |
-| `113`    | 交易无效。该交易已处理 |
-| `114`    | 找不到活跃的银行账户   |
-| `115`    | 密钥 / 商户代码无效    |
-| `116`    | 银行正在维护中         |
-| `117`    | 该支付方式的服务器错误 |
-| `118`    | 密钥参数格式无效       |
-| `119`    | 余额不足               |
+| 错误代码 | 描述                                                           |
+| -------- | -------------------------------------------------------------- |
+| `109`    | [DP] Incomplete parameter                                      |
+| `110`    | [DP] Invalid Bank ID                                           |
+| `111`    | [DP] Invalid Transaction Code ( not unique )                   |
+| `112`    | [DP] Invalid Timestamp                                         |
+| `113`    | [DP] Invalid Transaction. The transaction is already processed |
+| `114`    | [DP] Active bank account is not found                          |
+| `115`    | [DP] Invalid Key / Merchant code                               |
+| `116`    | [DP] Bank is under maintenance                                 |
+| `117`    | [DP] Server Error for this payout method !                     |
+| `118`    | [DP] Format Key Paramater Invalid                              |
+| `119`    | [DP] Insufficient Balance                                      |
 
 ## 支付错误列表
 
 以下是 payout 端点的错误响应：
 
-| 错误代码 | 描述                                           |
-| -------- | ---------------------------------------------- |
-| `115`    | 密钥 / 商户代码无效，错误代码 115              |
-| `109`    | 参数不完整，错误代码 109                       |
-| `111`    | 交易代码无效（不唯一），错误代码 111           |
-| `110`    | 支付方式不可用，错误代码 110                   |
-| `116`    | 支付方式正在维护中，错误代码 116               |
-| `117`    | 该支付方式的服务器错误，错误代码 117           |
-| `118`    | 密钥参数格式无效，错误代码 118                 |
-| `114`    | 您的商户不支持这种支付方式的货币，错误代码 114 |
-| `112`    | 时间戳无效，错误代码 112                       |
-| `113`    | 您的商户货币目前不支持该货币汇率，错误代码 113 |
-| `119`    | 余额不足，错误代码 119                         |
-| `120`    | IFSC 代码无效，请重试，错误代码 120            |
-| `121`    | 找不到取款银行，错误代码 121                   |
-| `122`    | 金额不能有小数，请重试，错误代码 122           |
-| `123`    | 提款请求失败，请重试，错误代码 123             |
-| `124`    | 您的 IP 地址已被封锁，错误代码 124             |
-| `131`    | 连接支付账户时出现问题，请重试，错误代码 131   |
+| 错误代码 | 描述                                                                                           |
+| -------- | ---------------------------------------------------------------------------------------------- |
+| `115`    | [WD] Invalid Key / Merchant code!, error code 115                                              |
+| `109`    | [WD] Incomplete parameter!, error code 109                                                     |
+| `111`    | [WD] Invalid Transaction Code ( not unique )!, error code 111                                  |
+| `110`    | [WD] Payout Method Not Available, error code 110,                                              |
+| `116`    | [WD] Payout method is under maintenance!, error code 116                                       |
+| `117`    | [WD] Server error for this payout method!, error code 117                                      |
+| `118`    | [WD] Format Key parameter invalid!, error code 118                                             |
+| `114`    | [WD] Currency of payment method is not supported for your merchant!, error code 114            |
+| `112`    | [WD] Invalid Timestamp!, error code 112                                                        |
+| `113`    | [WD] Currency rate is not supported for your merchant currency at this moment!, error code 113 |
+| `119`    | [WD] Insufficient Balance!, error code 119                                                     |
+| `120`    | [WD] Invalid IFSC Code! Please try again, error code 120                                       |
+| `121`    | [WD] Withdraw Bank not found!, error code 121                                                  |
+| `122`    | [WD] Amount cannot has decimal number, please try again! error code 122                        |
+| `123`    | [WD] Request Withdrawal Failed! Please Try Again, error code 123                               |
+| `124`    | [WD] Your IP address has been blocked, error code 124                                          |
+| `131`    | [WD] There are problem to connect payout account, please try again!, error code 131            |
+

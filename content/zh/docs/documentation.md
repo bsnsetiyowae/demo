@@ -41,7 +41,8 @@
 
     -   `POST` [ KRW 支付](/api/v3/krw-payment)
     -   `POST` [ KRW 提交存款人](/api/v3/krw-depositor)
-
+    -   `POST` [MMK 提交存款人](/api/v3/mmk-depositor)
+    
 -   ## 资源
 
     -   [商家货币](/docs/currency)

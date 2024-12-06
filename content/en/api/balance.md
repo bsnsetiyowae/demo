@@ -27,7 +27,11 @@ This API is used to check the merchant balance amount. It requires 1 post parame
 
 ```bash title="cURL"
 curl --request GET \
---url {api_url}/api/v1/balance/{merchant_code}?key={string}
+--url {api_url}/api/v1/balance/{merchant_code} \
+--header 'Content-Type: application/json' \
+--data '{
+    "key": "<string>",
+}'
 ```
 
 </x-col>
@@ -73,9 +77,11 @@ Returns a transaction status object. This call returns an [error](/api/errors) i
 
 ```json title="Response"
 {
-    "balance": 100000,
-    "currency_code": "INR",
-    "currency_name": "India Rupee"
+    "currency_name": "Korean Won",
+    "currency_code": "KRW",
+    "balance": "2033968.739",
+    "frozen_balance": "1997683.660",
+    "available_balance": "36285.079"
 }
 ```
 

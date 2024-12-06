@@ -83,6 +83,15 @@ curl --request POST \
   <x-property name="deposit_name" type="string" required>
     存款名称（KRW必填）。
   </x-property>
+  <x-property name="callback_url" type="string">
+    存款名称（KRW必填）
+  </x-property>
+  <x-property name="identity_id" type="string" required>
+    必填项（适用于土耳其，TRY）
+  </x-property>
+  <x-property name="phone" type="string" required>
+    必填项（适用于BDT，11位数字，不含国家代码，例如：01812345678）
+  </x-property>
 </x-properties>
 
 </x-col>

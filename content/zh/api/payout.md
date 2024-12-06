@@ -113,6 +113,9 @@ curl --request POST \
   <x-property name="callback_url" type="string">
   除了后台设置的 URL 之外的回调 URL。
   </x-property>
+  <x-property name="phone_number" type="string">
+  必填项（适用于BDT，11位数字，不带国家代码，例如：01812345678）
+  </x-property>
 </x-properties>
 
 </x-col>

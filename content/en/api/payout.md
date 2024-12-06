@@ -115,6 +115,9 @@ curl --request POST \
   <x-property name="callback_url" type="string">
   Url callback beside url set from Backoffice.
   </x-property>
+  <x-property name="phone_number" type="string">
+  Required for BDT, 11 digits numbers without country code (ex. 01812345678 )
+  </x-property>
 </x-properties>
 
 </x-col>

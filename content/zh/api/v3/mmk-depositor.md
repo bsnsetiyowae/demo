@@ -1,7 +1,7 @@
 ---
-title: KRW 提交存款账户
+title: MMK 提交存款账户
 method: POST
-label: /api/{merchant_code}/v3/krw-submit-information
+label: /api/{merchant_code}/v3/submit-depositor
 toc: false
 ---
 
@@ -27,7 +27,7 @@ toc: false
 
 ```bash title="cURL"
 curl --request POST \
-  --url {api_url}/api/{merchant_code}/v3/krw-submit-information \
+  --url {api_url}/api/{merchant_code}/v3/submit-depositor \
   --header 'Content-Type: application/json' \
   --data '{
     "key": "<string>"
@@ -48,9 +48,7 @@ curl --request POST \
   <x-property name="transaction_code" type="string" required>
     由操作员生成。每笔交易必须唯一。
   </x-property>
-  <x-property name="bank_code" type="string" required></x-property>
-  <x-property name="account_number" type="string" required>
-    银行账号。
+  <x-property name="depositor_name" type="string" required>
   </x-property>
 </x-properties>
 
@@ -59,9 +57,8 @@ curl --request POST \
 
 ```json title="参数对象"
 {
-  "transaction_code": "TEST-DP-1697797081",
-  "bank_code": "Destination Bank Name",
-  "account_number": "Destination Bank Account Number"
+  "transaction_code": "TEST001",
+  "depositor_name": "",
 }
 ```
 
@@ -85,14 +82,7 @@ curl --request POST \
 ```json title="响应"
 {
   "status": "success",
-  "step": 2,
-  "message": "提交存款人信息成功。",
-  "transaction_no": "DP1697797081482",
-  "transaction_code": "TEST-DP-1697797081",
-  "amount": "10000.00",
-  "bank_name": "目标银行名称",
-  "account_name": "目标银行账户名称",
-  "account_number": "目标银行账号"
+  "message": "[DP] Success Submitted Depositor Name!.",
 }
 ```
 

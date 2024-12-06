@@ -42,6 +42,7 @@
 
     -   `POST` [ KRW Payment](/api/v3/krw-payment)
     -   `POST` [ KRW Submit Depositor](/api/v3/krw-depositor)
+    -   `POST` [ MMK Submit Depositor](/api/v3/mmk-depositor)
 
 -   ## Resources
 

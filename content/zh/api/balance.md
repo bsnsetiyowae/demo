@@ -26,7 +26,11 @@ toc: false
 
 ```bash title="cURL"
 curl --request GET \
---url {api_url}/api/v1/balance/{merchant_code}?key={string}
+--url {api_url}/api/v1/balance/{merchant_code} \
+--header 'Content-Type: application/json' \
+--data '{
+    "key": "<string>",
+}'
 ```
 
 </x-col>
@@ -72,9 +76,11 @@ curl --request GET \
 
 ```json title="响应"
 {
-    "balance": 100000,
-    "currency_code": "INR",
-    "currency_name": "印度卢比"
+    "currency_name": "Korean Won",
+    "currency_code": "KRW",
+    "balance": "2033968.739",
+    "frozen_balance": "1997683.660",
+    "available_balance": "36285.079"
 }
 ```
 
