@@ -2,7 +2,7 @@
 title: Submit RefNo API
 description: Submit RefNO for BDT only.
 method: POST
-label: /api/{merchant_code}/v3/krw-payment
+label: /api/{merchant_code}/v3/submit-refno
 toc: false
 ---
 

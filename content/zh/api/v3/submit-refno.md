@@ -2,7 +2,7 @@
 title: 提交 RefNo API
 description: 仅适用于 BDT 的 RefNO 提交。
 method: POST
-label: /api/{merchant_code}/v3/krw-payment
+label: /api/{merchant_code}/v3/submit-refno
 toc: false
 ---
 
