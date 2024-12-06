@@ -31,6 +31,13 @@
     -   `POST` [ Submit UTR](/api/v3/submit-utr)
     -   `POST` [ Submit RefNo](/api/v3/submit-refno)
 
+-   ## Callback
+
+    -   [Callback Page](/api/callback/page)
+    -   [Deposit Callback](/api/callback/deposit)
+    -   [Payout Callback](/api/callback/payout)
+
+
 -   ## Support
 
     -   `POST` [ KRW Payment](/api/v3/krw-payment)
@@ -40,9 +47,3 @@
 
     -   [Merchant Currency](/docs/currency)
     -   [Banks Code](/docs/banks)
-
--   ## Callback
-
-    -   [Callback Page](/api/callback/page)
-    -   [Deposit Callback](/api/callback/deposit)
-    -   [Payout Callback](/api/callback/payout)

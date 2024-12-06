@@ -30,7 +30,13 @@
     -   `POST` [ 支付请求](/api/v3/payment)
     -   `POST` [ 提交 UTR](/api/v3/submit-utr)
     -   `POST` [ 提交 RefNo](/api/v3/submit-refno)
-   
+
+-   ## 回调
+
+    -   [回调页面](/api/callback/page)
+    -   [存款回调](/api/callback/deposit)
+    -   [支付回调](/api/callback/payout)
+    
 -   ## Support 
 
     -   `POST` [ KRW 支付](/api/v3/krw-payment)
@@ -40,10 +46,3 @@
 
     -   [商家货币](/docs/currency)
     -   [银行代码](/docs/banks)
-
-
--   ## 回调
-
-    -   [回调页面](/api/callback/page)
-    -   [存款回调](/api/callback/deposit)
-    -   [支付回调](/api/callback/payout)
