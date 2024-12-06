@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {!! SiteConfig::metadata([ 'title' => $title ]) !!}
+    {!! SiteConfig::metadata(['title' => $title]) !!}
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -28,6 +28,7 @@
         open: false,
         toggleMenu() {
             this.open = !this.open
+            document.body.style.overflow = this.open ? 'hidden' : 'auto';
         },
         get headings() {
             return [...document.querySelectorAll('article h2, article h3')];
@@ -67,9 +68,13 @@
                             <!-- Logo -->
                             <div class="flex flex-shrink-0 items-center">
                                 <a href="/"
-                                    class="flex items-center before:absolute before:inset-0 before:-left-[calc(90%-6rem)] before:w-full before:skew-x-[25deg] before:bg-stone-800">
-                                    <img src={{ asset('logo/' . config('site.logo'), ) }} class="z-10 block h-10 w-auto fill-current text-white">
+                                    class="flex items-center before:absolute before:inset-0 before:-left-[calc(90%-6.5rem)] before:w-full before:skew-x-[25deg] before:bg-stone-800">
+                                    <img src="{{ asset('logo/' . config('site.logo_text')) }}"
+                                        class="z-10 hidden sm:block h-10 w-auto fill-current text-white">
+                                    <img src="{{ asset('logo/' . config('site.logo')) }}"
+                                        class="z-10 block sm:hidden h-10 w-auto fill-current text-white">
                                 </a>
+
                             </div>
 
                             <div class="flex w-full justify-end">
@@ -109,8 +114,8 @@
             </div>
             <!-- Mobile Navigation Menu -->
             <div :class="{ 'block': open, 'hidden': !open }"
-                class="block h-full w-full flex-auto overflow-y-auto overflow-x-hidden bg-white px-4 lg:hidden lg:px-12"
-                x-cloak >
+                class="h-full w-full flex-auto overflow-y-auto overflow-x-hidden bg-white px-4 hidden lg:px-12"
+                x-cloak>
                 <div class="docs_sidebar h-[calc(100vh-10rem)]">
                     {!! $index !!}
                 </div>
@@ -137,7 +142,9 @@
 
     <script>
         let aside = document.querySelector('aside');
-        let links = Array.from(aside.querySelectorAll('a[href$="{{ parse_url(LaravelLocalization::getNonLocalizedURL(Request::getPathInfo()), PHP_URL_PATH) }}" i]'));
+        let links = Array.from(aside.querySelectorAll(
+            'a[href$="{{ parse_url(LaravelLocalization::getNonLocalizedURL(Request::getPathInfo()), PHP_URL_PATH) }}" i]'
+            ));
         let lastLink = links[links.length - 1];
         aside.scrollTop = lastLink.offsetTop - 48;
     </script>
