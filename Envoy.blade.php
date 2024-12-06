@@ -37,7 +37,9 @@
 @endtask
 
 @task('install-dependencies')
-    composer install --no-interaction --quiet --no-dev --prefer-dist --optimize-autoloader
+    npm run prod --silent
+
+    {{-- composer install --no-interaction --quiet --no-dev --prefer-dist --optimize-autoloader --}}
 
     {{-- php artisan migrate --force --}}
 @endtask
