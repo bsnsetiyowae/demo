@@ -1,7 +1,7 @@
 ---
 title: 提交 UTR（仅适用于 INR）
 method: POST
-label: /api/{merchant_code}/v3/krw-payment
+label: /api/{merchant_code}/v3/submit-utr
 toc: false
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Submit UTR For INR Only
 method: POST
-label: /api/{merchant_code}/v3/krw-payment
+label: /api/{merchant_code}/v3/submit-utr
 toc: false
 ---
 
