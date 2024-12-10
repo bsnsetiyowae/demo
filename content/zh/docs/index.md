@@ -8,7 +8,7 @@ title: 介绍
 
 ## 工作流程
 
-![{brand} 工作流程](/assets/workflow.jpg)
+![{brand} 工作流程](/{name}/assets/workflow.jpg)
 
 ## 术语与定义
 
@@ -26,4 +26,4 @@ title: 介绍
 
 ## 流程图 V3
 
-![{brand} 流程图 V3](/assets/flowchart_v3.png)
+![{brand} 流程图 V3](/{name}/assets/flowchart_v3.png)

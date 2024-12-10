@@ -59,6 +59,7 @@ class Page
     {
         $markdown = Markdown::convert($this->disk->get($path));
         $brand = ucwords(config('site.name'));
+        $name = config('site.name');
 
         $content = $markdown->getContent();
         $frontmatter = method_exists($markdown, 'getFrontMatter') ? $markdown->getFrontMatter() : [];
@@ -71,6 +72,8 @@ class Page
             $frontmatter['description'] = preg_replace('/{brand}/i', $brand, $frontmatter['description']);
         }
 
+        $content = urldecode($content);
+        $content = preg_replace('/{name}/i', $name, $content);
         $content = preg_replace('/{brand}/i', $brand, $content);
 
         return [

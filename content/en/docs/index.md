@@ -9,7 +9,7 @@ This document aims to provide comprehensive technical specifications for integra
 
 ## Workflow
 
-![{brand} Workflow](/assets/workflow.jpg)
+![{brand} Workflow](/{name}/assets/workflow.jpg)
 
 
 ## Term & Definitions
@@ -28,4 +28,4 @@ If you are unclear, please continue to contact our support team.
 
 ## Flowchart V3
 
-![{brand} Flowchart V3](/assets/flowchart_v3.png)
+![{brand} Flowchart V3](/{name}/assets/flowchart_v3.png)

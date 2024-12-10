@@ -53,7 +53,7 @@ class SiteConfig
         }
 
         if (!empty($name)) {
-            $metadata .= "<link rel='icon' href='" . asset('favicon/'. strtolower($name) .'/favicon.ico') . "'>";
+            $metadata .= "<link rel='icon' href='" . asset(strtolower($name) .'/favicon.ico') . "'>";
         }
 
         return $metadata;

@@ -67,12 +67,8 @@
                         <div class="flex h-14 justify-between">
                             <!-- Logo -->
                             <div class="flex flex-shrink-0 items-center">
-                                <a href="/"
-                                    class="flex items-center before:absolute before:inset-0 before:-left-[calc(90%-6.5rem)] before:w-full before:skew-x-[25deg] before:bg-stone-800">
-                                    <img src="{{ asset('logo/' . config('site.logo_text')) }}"
-                                        class="z-10 hidden sm:block h-10 w-auto fill-current text-white">
-                                    <img src="{{ asset('logo/' . config('site.logo')) }}"
-                                        class="z-10 block sm:hidden h-10 w-auto fill-current text-white">
+                                <a href="/" class="flex items-center before:absolute before:inset-0 before:-left-[calc(90%-9rem)] before:w-full before:skew-x-[25deg] before:bg-stone-800">
+                                    <img src="{{ asset('logo/' . config('site.logo')) }}" class="z-10 h-10 w-auto fill-current text-white">
                                 </a>
 
                             </div>
