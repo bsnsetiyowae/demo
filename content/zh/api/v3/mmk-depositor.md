@@ -58,7 +58,7 @@ curl --request POST \
 ```json title="参数对象"
 {
   "transaction_code": "TEST001",
-  "depositor_name": "",
+  "depositor_name": ""
 }
 ```
 
@@ -82,7 +82,7 @@ curl --request POST \
 ```json title="响应"
 {
   "status": "success",
-  "message": "[DP] Success Submitted Depositor Name!.",
+  "message": "[DP] Success Submitted Depositor Name!."
 }
 ```
 

@@ -55,7 +55,7 @@ curl --request GET \
 
 ```json title="Parameters Object"
 {
-    "merchant_code": "ABC123",
+    "merchant_code": "ABC123"
 }
 ```
 These parameters must be [encrypted](/api/authentication) before being sent through the [key](#query-parameters) query.

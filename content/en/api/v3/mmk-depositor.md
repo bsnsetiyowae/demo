@@ -59,7 +59,7 @@ curl --request POST \
 ```json title="Parameters Object"
 {
   "transaction_code": "TEST001",
-  "depositor_name": "",
+  "depositor_name": ""
 }
 
 ```
@@ -84,7 +84,7 @@ Returns a transaction status object. This call returns an [error](/api/errors) i
 ```json title="Response"
 {
   "status": "success",
-  "message": "[DP] Success Submitted Depositor Name!.",
+  "message": "[DP] Success Submitted Depositor Name!."
 }
 ```
 

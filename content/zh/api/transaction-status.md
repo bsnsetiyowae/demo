@@ -56,7 +56,7 @@ curl --request POST \
 ```json title="参数对象"
 {
   "merchant_api_key": "xyz456",
-  "transaction_code": "TRX123456789",
+  "transaction_code": "TRX123456789"
 }
 ```
 这些参数必须在通过[key](#query-parameters)表单数据发送之前进行[加密](/api/authentication)。

@@ -57,7 +57,7 @@ curl --request POST \
 ```json title="Parameters object"
 {
   "merchant_api_key": "xyz456",
-  "transaction_code": "TRX123456789",
+  "transaction_code": "TRX123456789"
 }
 ```
 These parameters must be [encrypted](/api/authentication) before being sent through the [key](#query-parameters) form data.

@@ -54,7 +54,7 @@ curl --request GET \
 
 ```json title="参数对象"
 {
-    "merchant_code": "ABC123",
+    "merchant_code": "ABC123"
 }
 ```
 这些参数必须在通过 [key](#query-parameters) 查询发送之前进行 [加密](/api/authentication)。

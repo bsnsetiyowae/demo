@@ -144,7 +144,7 @@ Returns a transaction status object. This call returns an [error](/api/errors) i
   vLmNvbS9hc3NldC91cGkvY2FjaGVkLzgzMmE1NmZlLTBkYzktNDc0Ni05NDhkLWFlYmY
   3E5NDlkMw==",
  "expired_at":"2023-06-22 15:06:04",
- "expired_timezone":"GMT+05:30",
+ "expired_timezone":"GMT+05:30"
 }
 ```
 ```json title="Response BDT"
