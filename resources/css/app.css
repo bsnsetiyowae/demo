@@ -824,3 +824,9 @@ pre code[data-lang="text"] {
 #table-wrapper {
     table-layout: auto;
 }
+
+
+.prose :where(figcaption + pre):not(:where([class~="not-prose"] *)) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
