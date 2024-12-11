@@ -3,7 +3,6 @@
 return [
     "default" => [
         'name' => 's88pay',
-        'logo' => 's88.png',
         'meta' => [
             'title' => 'S88pay Documentation',
             'description' => '',
@@ -13,7 +12,6 @@ return [
 
     "demo.test" => [
         'name' => 's88pay',
-        'logo' => 's88.png',
         'meta' => [
             'title' => 'S88Pay Documentation',
             'description' => '',
@@ -23,7 +21,6 @@ return [
 
     "s88pay.net" => [
         'name' => 's88pay',
-        'logo' => 's88.png',
         'meta' => [
             'title' => 'S88Pay Documentation',
             'description' => '',
@@ -33,7 +30,6 @@ return [
 
     "rubikpay.com" => [
         'name' => 'rubikpay',
-        'logo' => 'rubikpay.png',
         'meta' => [
             'title' => 'RubikPay Documentation',
             'description' => '',
