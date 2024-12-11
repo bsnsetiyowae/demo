@@ -7,7 +7,7 @@ return [
             'title' => 'S88pay Documentation',
             'description' => '',
         ],
-        'api_url' => 'https://api.s88pay.net',
+        'api_url' => 'https://staging.s88pay.net',
     ],
 
     "demo.test" => [
@@ -16,7 +16,7 @@ return [
             'title' => 'S88Pay Documentation',
             'description' => '',
         ],
-        'api_url' => 'https://api.s88pay.net',
+        'api_url' => 'https://staging.s88pay.net',
     ],
 
     "s88pay.net" => [
@@ -25,7 +25,7 @@ return [
             'title' => 'S88Pay Documentation',
             'description' => '',
         ],
-        'api_url' => 'https://api.s88pay.net',
+        'api_url' => 'https://staging.s88pay.net',
     ],
 
     "rubikpay.com" => [
@@ -34,6 +34,6 @@ return [
             'title' => 'RubikPay Documentation',
             'description' => '',
         ],
-        'api_url' => 'https://api.rubikpay.com',
+        'api_url' => 'https://api-uat.rubikpay.com',
     ],
 ];
