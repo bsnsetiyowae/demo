@@ -27,7 +27,7 @@ transaction status. It requires an encrypted request with a `secret key` and `me
 
 ```bash title="cURL"
 curl --request POST \
-  --url https://staging.{brand}.net/api/v1/payout/{merchant_code} \
+  --url {api_url}/api/v1/payout/{merchant_code} \
   --header 'Content-Type: application/json' \
   --data '{
   "key": "<string>"
