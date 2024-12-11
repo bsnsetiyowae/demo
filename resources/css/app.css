@@ -816,3 +816,11 @@ code.torchlight .line-number,code.torchlight .summary-caret {
 pre code[data-lang="text"] {
     white-space: normal;
 }
+
+#table-wrapper {
+    overflow-x: auto;
+}
+
+#table-wrapper {
+    table-layout: auto;
+}

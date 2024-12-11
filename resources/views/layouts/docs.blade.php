@@ -74,7 +74,7 @@
                             </div>
 
                             <div class="flex w-full justify-end">
-                                <div class="ml-10 flex w-full items-center justify-end">
+                                <div class="ml-5 flex w-full items-center justify-end">
 
                                     <x-language-switcher />
 

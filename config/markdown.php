@@ -64,6 +64,16 @@ return [
         'title' => 'Permalink',
     ],
 
+    'table' => [
+        'wrap' => [
+            'enabled' => true, 
+            'tag' => 'div',
+            'attributes' => [
+                'id' => "table-wrapper"
+            ],
+        ],
+    ],
+
 
     /*
     |--------------------------------------------------------------------------
