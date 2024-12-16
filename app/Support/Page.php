@@ -36,8 +36,9 @@ class Page
 
     public function view(string $view)
     {
+        $name = config('site.name');
         $path = "$this->locale/$this->type/$this->page.md";
-        $key = 'view.' . $this->locale . '.' . $this->type . '.' . $this->page;
+        $key = $name . '.' . $this->locale . '.' . $this->type . '.' . $this->page;
 
         abort_if(!$this->disk->exists($path), 404);
 
