@@ -27,6 +27,10 @@ Japanese Yen
 
 Korean Won
 
+### [MMK Bank Code](/docs/bank/mmk)
+
+Myanmar Kyat
+
 ### [MYR Bank Code](/docs/bank/myr)
 
 Malaysian ringgit

@@ -78,7 +78,7 @@ curl --request POST \
     请参阅[货币列表](/docs/currency)。
   </x-property>
   <x-property name="bank_code" type="double" required>
-    仅在[BDT](/docs/bank/bdt)、[VND](/docs/bank/vnd)、[THB](/docs/bank/thb)、[IDR](/docs/bank/idr)、[MYR](/docs/bank/myr) 和 [PHP](/docs/bank/php) 在线银行支付方法更改事件中需要。
+    仅在[BDT](/docs/bank/bdt)、[VND](/docs/bank/vnd)、[THB](/docs/bank/thb)、[MMK](/docs/bank/mmk)、[IDR](/docs/bank/idr)、[MYR](/docs/bank/myr) 和 [PHP](/docs/bank/php) 在线银行支付方法更改事件中需要。
   </x-property>
   <x-property name="deposit_name" type="string" required>
     存款名称（KRW必填）。

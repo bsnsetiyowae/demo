@@ -27,6 +27,10 @@ description: 銀行代號 {brand} 支付整合。
 
 韩元
 
+### [MMK 银行代码](/docs/bank/mmk)
+
+缅甸缅元
+
 ### [MYR 银行代码](/docs/bank/myr)
 
 马来西亚林吉特

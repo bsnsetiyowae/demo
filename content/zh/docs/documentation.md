@@ -44,6 +44,6 @@
 -   ## 资源
 
     -   [银行代码](/docs/banks)
-    -   [错误列表](/api/errors)
     -   [商家货币](/docs/currency)
+    -   [错误列表](/api/errors)
     -   [交易状态](/api/status)

@@ -45,6 +45,6 @@
 -   ## Resources
 
     -   [Banks Code](/docs/banks)
-    -   [Errors List](/api/errors)
     -   [Merchant Currency](/docs/currency)
+    -   [Errors List](/api/errors)
     -   [Transaction Status](/api/status)
