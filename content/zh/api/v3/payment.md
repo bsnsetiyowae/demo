@@ -1,6 +1,6 @@
 ---
 title: H2H 付款请求
-description: 如果您想创建自己的付款页面，可以使用此 API。此功能仅适用于 INR、BDT、VND、JPY、BRL。
+description: 如果您想创建自己的付款页面，可以使用此 API。此功能仅适用于 INR、MMK、BDT、VND、JPY、BRL。
 method: POST
 label: /api/{merchant_code}/v3/dopayment
 toc: false

@@ -1,6 +1,6 @@
 ---
 title: H2H Payment Request
-description: You may use this api if you want to create your own payment page. This feature is only available for INR, BDT, VND,JPY, BRL.
+description: You may use this api if you want to create your own payment page. This feature is only available for INR, MMK, BDT, VND,JPY, BRL.
 method: POST
 label: /api/{merchant_code}/v3/dopayment
 toc: false
@@ -79,7 +79,7 @@ curl --request POST \
     Please refer to [currency list](/docs/currency).
   </x-property>
   <x-property name="bank_code" type="double" required>
-    Required just on  [BDT](/docs/bank/bdt), [VND](/docs/bank/vnd), [THB](/docs/bank/thb), [MMK](/docs/bank/mmk), [IDR](/docs/bank/idr), [MYR](/docs/bank/myr), and [PHP](/docs/bank/php) online bank payment PaymentMethodChangeEvent.
+    Required just on  [BDT](/docs/bank/bdt), [VND](/docs/bank/vnd), [THB](/docs/bank/thb), [MMK](/docs/bank/thb), [IDR](/docs/bank/idr), [MYR](/docs/bank/myr), and [PHP](/docs/bank/php) online bank payment PaymentMethodChangeEvent.
   </x-property>
    <x-property name="deposit_name" type="string" required>
     Deposit name (mandatory for KRW).
