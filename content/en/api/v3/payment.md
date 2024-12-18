@@ -1,6 +1,6 @@
 ---
 title: H2H Payment Request
-description: You may use this api if you want to create your own payment page. This feature is only available for INR, MMK, BDT, VND,JPY, BRL.
+description: You may use this api if you want to create your own payment page. This feature is only available for INR, BDT, VND, JPY, KRW, BRL, TRY, MMK.
 method: POST
 label: /api/{merchant_code}/v3/dopayment
 toc: false
