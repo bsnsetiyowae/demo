@@ -73,7 +73,7 @@ curl --request POST \
     Example `P001`. Please contact the administrator to get your payment code
   </x-property>
   <x-property name="user_id" type="string" required>
-    User identifier.
+    Can be filled by the user key field on your system. For example : USR98323923
   </x-property>
   <x-property name="currency_code" type="string" required>
     Please refer to [currency list](/docs/currency)

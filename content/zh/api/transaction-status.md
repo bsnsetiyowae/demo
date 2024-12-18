@@ -46,7 +46,7 @@ curl --request POST \
         提供商提供的。
     </x-property>
     <x-property name="transaction_code" type="number" required>
-        运营商生成。必须对每个交易进行唯一标识。
+        由操作员生成。这是之前已经发送给支付请求api的交易代码。
     </x-property>
 </x-properties>
 

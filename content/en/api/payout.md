@@ -10,8 +10,7 @@ toc: false
 
 ## Process a payout
 
-This API is used for payout request submission. It requires some parameters to submit payouts. Check the
-transaction status. It requires an encrypted request with a `secret key` and `merchant key`.
+This API is used for payout request submission. It requires some parameters that are encrypted  with a `secret key` and `merchant key` to submit payouts.
 
 ### Request Body
 
@@ -69,7 +68,7 @@ curl --request POST \
     The amount of of the transaction.
   </x-property>
   <x-property name="user_id" type="string" required>
-    User identifier.
+    Can be filled by the user key field on your system. For example : USR98323923
   </x-property>
   <x-property name="currency_code" type="string" required>
   Please refer to [currency list](/docs/currency).
@@ -89,22 +88,14 @@ curl --request POST \
 
   The available **INR bank code** is displayed on the bank code section in {brand} Backoffice in Withdraw Menu.
 
-  The available [CNY bank code](/docs/bank/cny).
-
-  the avaliable [THB bank code](/docs/bank/thb).
-
-  the avaliable [BRL bank code](/docs/bank/brl).
+  The available [Bank Code](/docs/banks)
   </x-property>
   <x-property name="bank_name" type="string" required>
   **Required for** ( INR, CNY, VND, THB, BDT, IDR, MYR, KRW, JPY,BRL and PHP Payout)
 
   The available **INR bank code** is displayed on the bank code section in {brand} Backoffice in Withdraw Menu.
 
-  The available [CNY bank code](/docs/bank/cny).
-
-  the avaliable [THB bank code](/docs/bank/thb).
-
-  the avaliable **BRL** used the account value.
+  The available [Bank Code](/docs/banks)
   </x-property>
   <x-property name="branch_code" type="string">
   **Required only** for **JPY**. Branch Code.
@@ -113,7 +104,7 @@ curl --request POST \
   Bank Account / Wallet name.
   </x-property>
   <x-property name="callback_url" type="string">
-  Url callback beside url set from Backoffice.
+  Url callback. We will send updated status from a transaction to your side using this url. You can choose either set it on our BO or by this parameter. If you set both then we will send a callback to both urls as well.
   </x-property>
   <x-property name="phone_number" type="string">
   Required for BDT, 11 digits numbers without country code (ex. 01812345678 )

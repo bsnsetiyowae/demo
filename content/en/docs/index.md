@@ -26,6 +26,6 @@ In order to read the documentation clearly, we need to have the same perception.
 
 If you are unclear, please continue to contact our support team.
 
-## Flowchart V3
+## H2H Payment Flow
 
-![{brand} Flowchart V3](/{name}/assets/flowchart_v3.png)
+![{brand} H2H Payment Flow](/{name}/assets/flowchart_v3.png)

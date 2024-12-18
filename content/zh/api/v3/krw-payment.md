@@ -72,7 +72,7 @@ curl --request POST \
     例如 `P001`。请联系管理员获取您的支付代码
   </x-property>
   <x-property name="user_id" type="string" required>
-    用户标识符。
+   可以由您系统上的用户密钥字段填写。例如：USR98323923
   </x-property>
   <x-property name="currency_code" type="string" required>
     请参阅[货币列表](/docs/currency)

@@ -31,7 +31,7 @@ curl --request POST \
 <x-row>
 <x-col class="md:max-w-lg">        
 
-## 响应
+## 参数
 
   <x-properties>
     <x-property name="transaction_code" type="string">

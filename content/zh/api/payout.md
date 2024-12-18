@@ -67,7 +67,7 @@ curl --request POST \
     交易金额。
   </x-property>
   <x-property name="user_id" type="string" required>
-    用户标识符。
+    可以由您系统上的用户密钥字段填充。例如：USR98323923。
   </x-property>
   <x-property name="currency_code" type="string" required>
   请参阅 [货币列表](/docs/currency)。
@@ -87,22 +87,14 @@ curl --request POST \
 
   可用的 **INR 银行代码** 显示在 {brand} 后台提现菜单中的银行代码部分。
 
-  可用的 [CNY 银行代码](/docs/bank/cny)。
-
-  可用的 [THB 银行代码](/docs/bank/thb)。
-
-  可用的 [BRL 银行代码](/docs/bank/brl)。
+  可用的 [银行代码](/docs/banks)。
   </x-property>
   <x-property name="bank_name" type="string" required>
   **必填** (INR, CNY, VND, THB, BDT, IDR, MYR, KRW, JPY, BRL 和 PHP 付款)
 
   可用的 **INR 银行代码** 显示在 {brand} 后台提现菜单中的银行代码部分。
 
-  可用的 [CNY 银行代码](/docs/bank/cny)。
-
-  可用的 [THB 银行代码](/docs/bank/thb)。
-
-  可用的 **BRL** 使用账户值。
+  可用的 [银行代码](/docs/banks)。
   </x-property>
   <x-property name="branch_code" type="string">
   **仅对 JPY 必填**。分行代码。
@@ -111,7 +103,7 @@ curl --request POST \
   银行账户 / 钱包名称。
   </x-property>
   <x-property name="callback_url" type="string">
-  除了后台设置的 URL 之外的回调 URL。
+  URL 回调。我们将使用此 URL 将交易的更新状态发送到您这边。您可以选择在我们的 BO 上设置它，也可以通过此参数设置。如果您同时设置两者，那么我们也会向这两个 URL 发送回调。
   </x-property>
   <x-property name="phone_number" type="string">
   必填项（适用于BDT，11位数字，不带国家代码，例如：01812345678）

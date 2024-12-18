@@ -69,21 +69,24 @@ curl --request GET \
     Please contact the administrator to get your payment code. Example `P001`. 
   </x-property>
   <x-property name="user_id" type="string" required>
+    Can be filled by the user key field on your system. For example : USR98323923
   </x-property>
   <x-property name="currency_code" type="string" required>
     Please refer to [currency list](/docs/currency).
   </x-property>
   <x-property name="bank_code" type="double">
-    Required just on [VND](/docs/bank/vnd), [THB](/docs/bank/thb), [IDR](/docs/bank/idr), [MYR](/docs/bank/myr), and [PHP](/docs/bank/php) online bank payment.
+    Required just on [VND](/docs/bank/vnd), [THB](/docs/bank/thb), [IDR](/docs/bank/idr), [MYR](/docs/bank/myr), and [PHP](/docs/bank/php) online bank payment. 
   </x-property>
   <x-property name="callback_url" type="string">
-    Url callback beside url set from Backoffice.
+    Url callback. We will send updated status from a transaction to your side using this url. You can choose either set it on our BO or by this parameter. If you set both then we will send a callback to both urls as well.
   </x-property>
   <x-property name="return_url" type="string">
     Dynamic return URL to redirect back to the merchant page after completing transactions.
   </x-property>
   <x-property name="random_bank_code" type="string">
-    Only for VND (Use value BankQR for E-Wallet and OBT for bank transfer).
+  Only for VND (Use value BankQR for E-Wallet and OBT for bank transfer).
+
+  If this parameter is filled then our system will search available bank channels and show it to your users randomly. In this case, you do not need to fill the bank_code parameter.
   </x-property>
 </x-properties>
 

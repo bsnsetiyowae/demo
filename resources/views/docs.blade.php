@@ -18,7 +18,7 @@
             @endisset
 
             @isset($frontmatter['description'])
-                <p>{{ $frontmatter['description'] }}</p>
+                <p class="max-w-xl">{{ $frontmatter['description'] }}</p>
             @endisset
             {!! $content !!}
         </article>

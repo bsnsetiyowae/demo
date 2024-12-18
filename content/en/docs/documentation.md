@@ -15,8 +15,6 @@
     -   [Overview](/api)
     -   [Authentication & Security](/api/authentication)
     -   [Get started with the API](/api/get-started)
-    -   [Transaction Status](/api/status)
-    -   [Errors List](/api/errors)
 
 -   ## API Function
 
@@ -46,5 +44,7 @@
 
 -   ## Resources
 
-    -   [Merchant Currency](/docs/currency)
     -   [Banks Code](/docs/banks)
+    -   [Errors List](/api/errors)
+    -   [Merchant Currency](/docs/currency)
+    -   [Transaction Status](/api/status)

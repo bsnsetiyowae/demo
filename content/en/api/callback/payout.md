@@ -1,5 +1,6 @@
 ---
 title: Payout Callback (Operator)
+toc: false
 ---
 
 <x-row>
@@ -37,7 +38,7 @@ curl --request POST \
 <x-row>
 <x-col class="md:max-w-lg">
 
-## Response Object
+## Parameters
 
 <x-properties>
   <x-property name="transaction_no" type="string">

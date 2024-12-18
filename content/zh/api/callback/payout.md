@@ -1,5 +1,6 @@
 ---
 title: 付款回调 (运营商)
+toc: false
 ---
 
 <x-row>
@@ -33,7 +34,7 @@ curl --request POST \
 <x-row>
 <x-col class="md:max-w-lg">
 
-## 响应对象
+## 参数
 
 <x-properties>
   <x-property name="transaction_no" type="string">

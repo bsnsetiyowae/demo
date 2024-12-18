@@ -15,8 +15,6 @@
     -   [概览](/api)
     -   [认证与安全](/api/authentication)
     -   [开始使用 API](/api/get-started)
-    -   [交易状态](/api/status)
-    -   [错误列表](/api/errors)
 
 -   ## API 功能
 
@@ -45,5 +43,7 @@
     
 -   ## 资源
 
-    -   [商家货币](/docs/currency)
     -   [银行代码](/docs/banks)
+    -   [错误列表](/api/errors)
+    -   [商家货币](/docs/currency)
+    -   [交易状态](/api/status)

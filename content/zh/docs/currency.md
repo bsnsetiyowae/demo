@@ -12,6 +12,7 @@ description: "{brand}支付集成资源。"
 | `IDR`    | [印尼盾](/docs/bank/idr)         |
 | `JPY`    | [日元](/docs/bank/jpy)           |
 | `KRW`    | [韩元](/docs/bank/krw)           |
+| `MMK`    | [缅甸缅元](/docs/bank/mmk)       |
 | `MYR`    | [马来西亚林吉特](/docs/bank/myr) |
 | `PHP`    | [菲律宾比索](/docs/bank/php)     |
 | `THB`    | [泰铢](/docs/bank/thb)           |

@@ -1,5 +1,5 @@
 ---
-title: Submit RefNo API
+title: Submit Refno API for BDT
 description: Submit RefNO for BDT only.
 method: POST
 label: /api/{merchant_code}/v3/submit-refno

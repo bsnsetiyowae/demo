@@ -1,6 +1,6 @@
 ---
-title: Payment Request
-description: Make payment request for INR, BDT, VND, JPY, BRL.
+title: H2H Payment Request
+description: You may use this api if you want to create your own payment page. This feature is only available for INR, BDT, VND,JPY, BRL.
 method: POST
 label: /api/{merchant_code}/v3/dopayment
 toc: false
@@ -73,7 +73,7 @@ curl --request POST \
     Example `P001`. Please contact the administrator to get your payment code.
   </x-property>
   <x-property name="user_id" type="string" required>
-    User identifier.
+    Can be filled by the user key field on your system. For example : USR98323923
   </x-property>
   <x-property name="currency_code" type="string" required>
     Please refer to [currency list](/docs/currency).
@@ -85,7 +85,7 @@ curl --request POST \
     Deposit name (mandatory for KRW).
   </x-property>
   <x-property name="callback_url" type="string">
-    Deposit name (mandatory for KRW).
+    Url callback. We will send updated status from a transaction to your side using this url. You can choose either set it on our BO or by this parameter. If you set both then we will send a callback to both urls as well.
   </x-property>
   <x-property name="identity_id" type="string" required>
     Required for Turkey (TRY)

@@ -68,6 +68,7 @@ curl --request GET \
     请联系管理员获取您的支付代码。例如 `P001`。 
   </x-property>
   <x-property name="user_id" type="string" required>
+    可以由您系统上的用户密钥字段填写。例如：USR98323923
   </x-property>
   <x-property name="currency_code" type="string" required>
     请参考 [货币列表](/docs/currency)。
@@ -76,13 +77,15 @@ curl --request GET \
     仅在 [VND](/docs/bank/vnd)、[THB](/docs/bank/thb)、[IDR](/docs/bank/idr)、[MYR](/docs/bank/myr) 和 [PHP](/docs/bank/php) 在线银行支付时需要。
   </x-property>
   <x-property name="callback_url" type="string">
-    除了从后台设置的URL之外的回调URL。
+    URL 回调。我们将使用此 URL 将交易的更新状态发送到您这边。您可以选择在我们的 BO 上设置它，也可以通过此参数设置。如果您同时设置两者，那么我们也会向这两个 URL 发送回调。
   </x-property>
   <x-property name="return_url" type="string">
     在完成交易后重定向回商户页面的动态返回URL。
   </x-property>
   <x-property name="random_bank_code" type="string">
-    仅用于 VND（E-Wallet 使用值 BankQR 和银行转账使用 OBT）。
+  仅适用于 VND（电子钱包使用 BankQR 值，银行转账使用 OBT 值）。
+
+  如果填写此参数，我们的系统将搜索可用的银行渠道并随机显示给您的用户。在这种情况下，您无需填写 bank_code 参数。
   </x-property>
 </x-properties>
 

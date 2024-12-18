@@ -24,6 +24,6 @@ title: 介绍
 
 如果您不清楚，请继续联系我们的支持团队。
 
-## 流程图 V3
+## H2H 支付流程
 
-![{brand} 流程图 V3](/{name}/assets/flowchart_v3.png)
+![{brand} H2H 支付流程](/{name}/assets/flowchart_v3.png)

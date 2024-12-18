@@ -18,7 +18,7 @@
             @endisset
 
             @isset($frontmatter['description'])
-                <p>{{ preg_replace('/{brand}/', $brand, $frontmatter['description']) }}</p>
+                <p class="max-w-xl">{{ preg_replace('/{brand}/', $brand, $frontmatter['description']) }}</p>
             @endisset
             {!! preg_replace('/{brand}/', $brand, $content) !!}
         </article>

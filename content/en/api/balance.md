@@ -10,7 +10,7 @@ toc: false
 
 ## Check balance amount
 
-This API is used to check the merchant balance amount. It requires 1 post parameter `key`, which is included by
+This API is used to check the merchant balance amount. It requires 1 parameter `key`, which is included by
 `merchant_code`.
 
 ### Query Parameters

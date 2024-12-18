@@ -11,6 +11,7 @@ description: Resources {brand} Payment Integration.
 | `IDR`         | [Indonesian Rupiah](/docs/bank/idr) |
 | `JPY`         | [Japanese Yen](/docs/bank/jpy)      |
 | `KRW`         | [Korean Won](/docs/bank/krw)        |
+| `MMK`         | [Myanmar Kyat](/docs/bank/mmk)        |
 | `MYR`         | [Malaysian ringgit](/docs/bank/myr) |
 | `PHP`         | [Philippine peso](/docs/bank/php)   |
 | `THB`         | [Thai Baht](/docs/bank/thb)         |

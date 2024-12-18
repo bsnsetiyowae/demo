@@ -1,6 +1,6 @@
 ---
-title: 支付请求
-description: 发起INR、BDT、VND、JPY、BRL的支付请求。
+title: H2H 付款请求
+description: 如果您想创建自己的付款页面，可以使用此 API。此功能仅适用于 INR、BDT、VND、JPY、BRL。
 method: POST
 label: /api/{merchant_code}/v3/dopayment
 toc: false
@@ -72,7 +72,7 @@ curl --request POST \
     例如 `P001`。请联系管理员获取您的支付代码。
   </x-property>
   <x-property name="user_id" type="string" required>
-    用户标识符。
+    可以由您系统上的用户密钥字段填写。例如：USR98323923
   </x-property>
   <x-property name="currency_code" type="string" required>
     请参阅[货币列表](/docs/currency)。
@@ -84,7 +84,7 @@ curl --request POST \
     存款名称（KRW必填）。
   </x-property>
   <x-property name="callback_url" type="string">
-    存款名称（KRW必填）
+    URL 回调。我们将使用此 URL 将交易的更新状态发送到您这边。您可以选择在我们的 BO 上设置它，也可以通过此参数设置。如果您同时设置两者，那么我们也会向这两个 URL 发送回调。
   </x-property>
   <x-property name="identity_id" type="string" required>
     必填项（适用于土耳其，TRY）
