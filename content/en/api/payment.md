@@ -30,6 +30,8 @@ curl --request GET \
   --url {api_url}/{merchant_code}/v2/dopayment?key={string}
 ```
 
+<x-sandbox method="GET" contentType="application/json" url="/{merchant_code}/v2/dopayment?key={key}" />
+
 </x-col>
 </x-row>
 

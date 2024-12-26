@@ -21,6 +21,7 @@
     <!-- Before the closing head -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typesense-docsearch-css@0.4.1/dist/style.min.css">
 
+    @livewireStyles
 </head>
 
 <body class="antialiased scroll-smooth">
@@ -144,6 +145,7 @@
         let lastLink = links[links.length - 1];
         aside.scrollTop = lastLink.offsetTop - 48;
     </script>
+    @livewireScripts
 </body>
 
 </html>

@@ -32,6 +32,9 @@ curl --request POST \
   "key": "<string>"
     }'
 ```
+
+<x-sandbox method="POST" contentType="application/json" url="/api/v1/payout/{merchant_code}" payload='{"key": "{key}"}' />
+
 </x-col>
 </x-row>
 

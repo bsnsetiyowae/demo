@@ -34,6 +34,8 @@ curl --request GET \
 }'
 ```
 
+<x-sandbox method="GET" contentType="application/json" url="/api/v1/balance/{merchant_code}" payload='{"key": "{key}"}' />
+
 </x-col>
 </x-row>
 
