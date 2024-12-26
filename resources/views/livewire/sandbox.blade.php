@@ -41,6 +41,19 @@
                     await copyCode(button.closest("figure").querySelector("pre code"), button.querySelector('span'))
                 });
             });
+
+            async function copyCode(code, button) {
+                let text = code.innerText;
+
+                await navigator.clipboard.writeText(text);
+
+                button.innerText = "Copied!";
+
+                setTimeout(() => {
+                    button.innerText = "Copy";
+                }, 700);
+            }
+
         </script>
     @endempty
 </div>

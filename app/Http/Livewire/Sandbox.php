@@ -26,7 +26,7 @@ class Sandbox extends Component
     {
         $url = $this->replacePlaceholders($this->url, [
             'merchant_code' => $this->merchantCode,
-            'key' => urlencode( $this->key),
+            'key' =>  $this->key,
         ]);
 
         $payload = $this->replacePlaceholders($this->payload, [
