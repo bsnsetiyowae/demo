@@ -1,13 +1,13 @@
 <div class="px-2">
-    <div class="flex space-x-2 mb-4">
+    <div class="mb-4">
         <input type="text" wire:model.lazy="merchantCode" placeholder="Merchant Code" class="w-full border rounded px-4 py-2" />
 
+    </div>
+    <div class="flex space-x-2 mb-4">
+        <input type="text" wire:model.lazy="key" placeholder="Key" class="w-full border rounded px-4 py-2" />
         <x-button wire:click="sendRequest">
             Try
         </x-button>
-    </div>
-    <div class="mb-4">
-        <input type="text" wire:model.lazy="key" placeholder="Key" class="w-full border rounded px-4 py-2" />
     </div>
 
     <div wire:loading class="flex items-center space-x-2 mb-4 text-blue-500">

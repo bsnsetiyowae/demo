@@ -29,8 +29,10 @@ class Sandbox extends Component
             'key' =>  $this->key,
         ]);
 
+        $key = ( $this->contentType != 'application/json' ) ? urlencode($this->key) : $this->key;
+        
         $payload = $this->replacePlaceholders($this->payload, [
-            'key' => urlencode( $this->key),
+            'key' => $key,
         ]);
 
         parse_str(parse_url($url, PHP_URL_QUERY), $query);
@@ -38,7 +40,6 @@ class Sandbox extends Component
         try {
             $payload = $this->parsePayload($payload);
             $fullUrl = $this->baseUrl . $url;
-
             
             if (isset($query['key'])) {
                 $this->status = "using this url";
@@ -70,7 +71,7 @@ class Sandbox extends Component
                     } else {
                         $request = $request->asForm();
                     }
-                
+                    
                     $response = $request->post($fullUrl, $payload);
                     break;
 
